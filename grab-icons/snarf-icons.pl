@@ -13,7 +13,7 @@ while(<DOMAINS>) {
 		my $domain = $1;
 		my $url = $2;
 		my $fn = $domain.'.png';
-		system('curl', $url, '-o', 'images/'.$fn);
+		system('curl', $url, '-o', '../images/'.$fn);
 	} else {
 		my $fn = $_.'.png';
 		$fn =~ s/\//\./g;
