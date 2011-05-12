@@ -16,12 +16,14 @@ identi.ca,,
 is.gd,,
 j.mp,,
 linkedin.com,linkedin.com.png,http://www.linkedin.com/shareArticle?mini=true&url=%SHARE_URL%
-livejournal.com,,
+livejournal.com,livejournal.com.png,http://www.livejournal.com/update.bml?subject=%SHARE_URL%
 mail.google.com,,
 mail.yahoo.com,,
 mister-wong.com,,
+mixx.com,mixx.com.png,http://www.mixx.com/submit?page_url=%SHARE_URL%
 mozillaca.com,,
 myspace.com,myspace.com.png,http://www.myspace.com/Modules/PostTo/Pages/?u=%SHARE_URL%
+newswine.com,newswine.com.png,http://www.newsvine.com/_tools/seed&save?popoff=0&u=%SHARE_URL%
 orkut.com,,
 plurk.com,,
 posterous.com,,
@@ -29,10 +31,9 @@ reddit.com,reddit.com.png,http://reddit.com/submit?url=%SHARE_URL%
 soup.io,,
 stumbleupon.com,stumbleupon.com.png,http://www.stumbleupon.com/submit?url=%SHARE_URL%
 tinyurl.com,,
-www.tumblr.com,,
+www.tumblr.com,tumblr.com.png,http://www.tumblr.com/share
 evri.com,,
 twitter.com,twitter.com.png,http://twitter.com/home?status=%SHARE_URL%
 www.typepad.com,,
 wordpress.com,,
 www.yammer.com,,
-

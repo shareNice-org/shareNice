@@ -10,12 +10,14 @@ while(<CONFIG>) {
     if ($count != 0) {
         chomp;
         my @details = split(',', $_);
-    
-        $output .= " \"".$details[0]."\" :\n";
-        $output .= "  {\n";
-        $output .= "    \"url\" : \"".$details[2]."\",\n";
-        $output .= "    \"icon\" : \"".$details[1]."\"\n";
-        $output .= "  },\n";
+
+        if (defined($details[1])) {
+            $output .= " \"".$details[0]."\" :\n";
+            $output .= "  {\n";
+            $output .= "    \"url\" : \"".$details[2]."\",\n";
+            $output .= "    \"icon\" : \"".$details[1]."\"\n";
+            $output .= "  },\n";
+        }
 
     }
     $count++;
