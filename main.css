@@ -1,0 +1,36 @@
+a#shareBoxLink {
+    background: url(images/icon-share.png) no-repeat center left;
+    padding-left: 22px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#share-box-wrapper {
+    position:absolute;
+    display:none;
+    padding: 20px 0 0 0;
+}
+
+#share-box {
+    background: url(images/share-box.png) no-repeat center center;
+    width: 138px;
+    height: 47px;
+    margin: 10px 0 0 0;
+}
+
+#share-box-wrapper ul#socialLinks {
+    margin: 0 0 0 9px;
+    padding: 16px 0 0 0;
+    list-style:none;
+
+}
+
+#share-box-wrapper ul#socialLinks li {
+    float: left;
+    padding: 0 2px 0 0;
+}
+
+#share-box-wrapper ul#socialLinks li a {
+    margin: 0;
+    padding: 0;
+}
