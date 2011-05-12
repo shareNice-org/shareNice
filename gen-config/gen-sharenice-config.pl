@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-open(CONFIG, '<', 'test.txt') || die "cannot open test file: $!";
+open(CONFIG, '<', 'sharenice-domains.txt') || die "cannot open test file: $!";
 
 my $count = 0;
 
