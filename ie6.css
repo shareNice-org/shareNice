@@ -1,4 +1,7 @@
-#share-box {
-  background-image: none;
-  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/share-box.png);
+#share-box-wrapper #share-box-top {
+    margin-bottom: -3px;
+}
+
+#share-box-wrapper #share-box-bottom {
+    margin-top: -3px;
 }
