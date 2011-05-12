@@ -33,3 +33,5 @@ twitter.com
 www.typepad.com
 wordpress.com [http://s.wordpress.org/about/images/wpmini-blue.png]
 www.yammer.com
+mixx.com
+newswine.com
