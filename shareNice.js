@@ -6,7 +6,7 @@ jQuery(document).ready(function() {
     if (config != null) {
       var currentPage = window.location;
       for ( site in config ) {
-        shareBoxHTML = shareBoxHTML + '<li><a href="' + config[site].url.replace("%SHARE_URL%", currentPage) + '">' +
+        shareBoxHTML = shareBoxHTML + '<li><a href="' + config[site].url.replace("%SHARE_URL%", currentPage) + '" target="_blank">' +
                        '<img src="images/' + config[site].icon + '" style="border: 0" alt="'+site+'_icon" />' +
                        '</a></li>';
       }
