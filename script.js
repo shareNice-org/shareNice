@@ -1,5 +1,5 @@
 jQuery(document).ready(function() {
-  $('a#shareBoxLink, #share-box-wrapper').mouseenter(function() {
+    $('a#shareBoxLink, #share-box-wrapper').mouseenter(function() {
     $('#share-box-wrapper').show();
     $('#share-box-wrapper').css({'top':$(this).offset().top});
     $('#share-box-wrapper').css({'left':$(this).offset().left});
@@ -10,10 +10,11 @@ jQuery(document).ready(function() {
     $('a#share-email').attr('href', 'mailto:?body=' + value);
     $('a#share-fb').attr('href', 'http://www.facebook.com/sharer.php?u=' + value);
     $('a#share-fb').attr('target','_blank');
-  });
+    });
 
-  $('#share-box-wrapper').mouseleave(function () {
+    $('#share-box-wrapper').mouseleave(function () {
     $(this).hide();
-  });
+    });
 });
 
+/* vi:set expandtab sts=4 sw=4: */
