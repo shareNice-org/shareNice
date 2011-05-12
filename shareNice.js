@@ -1,4 +1,7 @@
-var shareNiceConfig = ' { "email" : { "url" : "mailto:?subject=Look&body=%SHARE_URL%", "icon" : "icon-email.png" }, "facebook.com" : { "url" : "http://www.facebook.com/sharer.php?u=%SHARE_URL%", "icon" : "facebook.com.png" }, "twitter.com" : { "url" : "http://twitter.com/home?status=%SHARE_URL%", "icon" : "twitter.com.png" } }';
+//var shareNiceConfig = '{ "email" : { "url" : "mailto:?subject=Look&body=%SHARE_URL%", "icon" : "icon-email.png" }, "facebook.com" : { "url" : "http://www.facebook.com/sharer.php?u=%SHARE_URL%", "icon" : "facebook.com.png" }, "twitter.com" : { "url" : "http://twitter.com/home?status=%SHARE_URL%", "icon" : "twitter.com.png" } }';
+
+var shareNiceConfig = '{ "email" : { "url" : "mailto:?subject=Look&body=%SHARE_URL%", "icon" : "icon-email.png" }, "facebook.com" : { "url" : "http://www.facebook.com/sharer.php?u=%SHARE_URL%", "icon" : "facebook.com.png" }, "twitter.com" : { "url" : "http://twitter.com/home?status=%SHARE_URL%", "icon" : "twitter.com.png" }, "email2" : { "url" : "mailto:?subject=Look&body=%SHARE_URL%", "icon" : "icon-email.png" }, "facebook.com2" : { "url" : "http://www.facebook.com/sharer.php?u=%SHARE_URL%", "icon" : "facebook.com.png" }, "twitter.com2" : { "url" : "http://twitter.com/home?status=%SHARE_URL%", "icon" : "twitter.com.png" } ,"email3" : { "url" : "mailto:?subject=Look&body=%SHARE_URL%", "icon" : "icon-email.png" }, "facebook.com3" : { "url" : "http://www.facebook.com/sharer.php?u=%SHARE_URL%", "icon" : "facebook.com.png" }, "twitter.com3" : { "url" : "http://twitter.com/home?status=%SHARE_URL%", "icon" : "twitter.com.png" }}';
+
 
 jQuery(document).ready(function() {
     var config = jQuery.parseJSON(shareNiceConfig);
