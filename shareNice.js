@@ -17,4 +17,24 @@ jQuery(document).ready(function() {
     });
 });
 
+var shareNiceConfig = '
+{ "twitter" : 
+    {
+        "url" : "http://twitter.com/home?status=[SHARE_URL]" ,
+        "icon" : "twitter.com.png" 
+    },
+  "email" : 
+    {
+        "url" : "mailto:?subject=Look&body=[SHARE_URL]",
+        "icon" : "email.png"
+    },
+  "facebook" : 
+    {
+        "url" : "http://www.facebook.com/sharer.php?u=[SHARE_URL]",
+        "icon" : "facebook.com.png"
+    }
+
+}';
+
+
 /* vi:set expandtab sts=4 sw=4: */
