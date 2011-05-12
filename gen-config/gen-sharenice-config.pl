@@ -35,9 +35,13 @@ while (<JSTEMPLATE>) {
     $output .= $_;
 }
 
-print $output;
-
 close(JSTEMPLATE);
+
+open (OUTPUT, "> ../shareNice.js") || die "sorry cant write to output file : ../shareNice.js\n";
+
+print OUTPUT $output;
+
+close(OUTPUT);
 
 print STDERR "Finished generating new shareNice.js file\n";
 # vi:set expandtab sts=4 sw=4:
