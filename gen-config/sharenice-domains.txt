@@ -5,9 +5,9 @@ bit.ly,,
 blogger.com,,
 delicious.com,,
 diigo.com,,
-email,icon-email.png,mailto:?subject=Look&body=[SHARE_URL]
+email,icon-email.png,mailto:?subject=Look&body=%SHARE_URL%
 evernote.com,,
-facebook.com,facebook.com.png,http://www.facebook.com/sharer.php?u=[SHARE_URL]
+facebook.com,facebook.com.png,http://www.facebook.com/sharer.php?u=%SHARE_URL%
 friendfeed.com,,
 google.com,,
 hotmail.com,,
@@ -25,11 +25,11 @@ orkut.com,,
 plurk.com,,
 posterous.com,,
 soup.io,,
-stumbleupon.com,,
+stumbleupon.com,stumbleupon.com.png,http://www.stumbleupon.com/submit?url=%SHARE_URL%
 tinyurl.com,,
 www.tumblr.com,,
 evri.com,,
-twitter.com,twitter.com.png,http://twitter.com/home?status=[SHARE_URL]
+twitter.com,twitter.com.png,http://twitter.com/home?status=%SHARE_URL%
 www.typepad.com,,
 wordpress.com,,
 www.yammer.com,,
