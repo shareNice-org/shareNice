@@ -2,7 +2,7 @@
 
 my $pattern = shift;
 
-open(DOMAINS, '<', 'domains.txt') || die "cannot open domains file: $!";
+open(DOMAINS, '<', 'icon-domains.txt') || die "cannot open domains file: $!";
 
 while(<DOMAINS>) {
     chomp;
@@ -18,7 +18,7 @@ while(<DOMAINS>) {
         my $fn = $_.'.png';
         $fn =~ s/\//\./g;
         $fn =~ s/www\d?\.//g;
-        system('curl', 'http://www.google.com/s2/favicons?domain='.$_, '-o', 'images/'.$fn);
+        system('curl', 'http://www.google.com/s2/favicons?domain='.$_, '-o', '../images/'.$fn);
     }
 }
 

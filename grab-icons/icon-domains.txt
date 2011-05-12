@@ -3,6 +3,7 @@ bebo.com
 bit.ly
 blogger.com
 delicious.com
+digg.com [http://developers.diggstatic.com/files/badge/icons/16x16-digg-guy.png]
 diigo.com
 evernote.com
 facebook.com
@@ -22,6 +23,7 @@ myspace.com
 orkut.com
 plurk.com
 posterous.com
+reddit.com
 soup.io
 stumbleupon.com
 tinyurl.com
