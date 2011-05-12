@@ -1,10 +1,10 @@
 #!/usr/bin/perl -w
 
-open(CONFIG, '<', 'sharenice-domains.txt') || die "cannot open test file: $!";
+open(CONFIG, '<', 'sharenice-domains.txt') || die "cannot open domain config file: $!";
 
 my $count = 0;
 
-my $output = "{\n";
+my $output = "var shareNiceConfig = {\n";
 
 while(<CONFIG>) {
     if ($count != 0) {
@@ -22,12 +22,22 @@ while(<CONFIG>) {
     }
     $count++;
 }
-$output =~ s/,\n$/\n/;
-
-$output .= "}\n";
-
-print $output;
 
 close(CONFIG);
 
+$output =~ s/,\n$/\n/;
+
+$output .= "};\n";
+
+open (JSTEMPLATE, '<', 'shareNice.js.template') || die "can't open the main .js file\n";
+
+while (<JSTEMPLATE>) {
+    $output .= $_;
+}
+
+print $output;
+
+close(JSTEMPLATE);
+
+print STDERR "Finished generating new shareNice.js file\n";
 # vi:set expandtab sts=4 sw=4:
