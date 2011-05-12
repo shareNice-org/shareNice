@@ -8,3 +8,5 @@ Please grab jquery, and place jquery.js or jquery.min.js in this directory to ma
 ethical social sharing system.
 
 The demo.html file supplied with this repository links to the Google Hosted jQuery library, you can choose to host jquery yourself, but you would have to change the URL of where jquery is hosted in the demo.html file.
+
+The .png files have been generated from the domain's favicon files, and converted using the snarf-icon.pl script. If you want to refresh/add more domain, you can run the perl script supplied in this repo
