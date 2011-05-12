@@ -23,7 +23,7 @@ mister-wong.com,,
 mixx.com,mixx.com.png,http://www.mixx.com/submit?page_url=%SHARE_URL%
 mozillaca.com,,
 myspace.com,myspace.com.png,http://www.myspace.com/Modules/PostTo/Pages/?u=%SHARE_URL%
-newswine.com,newswine.com.png,http://www.newsvine.com/_tools/seed&save?popoff=0&u=%SHARE_URL%
+newsvine.com,newsvine.com.png,http://www.newsvine.com/_tools/seed&save?popoff=0&u=%SHARE_URL%
 orkut.com,,
 plurk.com,,
 posterous.com,,
