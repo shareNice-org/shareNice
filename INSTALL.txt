@@ -1,4 +1,4 @@
-To install this social sharing system you will need to include jquery. 
+To install this social sharing system you will need to include jquery library. You can grab a version of jQuery from the below URL: 
 
 http://jquery.com/
 
@@ -6,3 +6,5 @@ We have tested this code with jquery version : jQuery JavaScript Library v1.6
 
 Please grab jquery, and place jquery.js or jquery.min.js in this directory to make use of this
 ethical social sharing system.
+
+The demo.html file supplied with this repository links to the Google Hosted jQuery library, you can choose to host jquery yourself, but you would have to change the URL of where jquery is hosted in the demo.html file.
