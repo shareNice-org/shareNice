@@ -43,5 +43,5 @@ print OUTPUT $output;
 
 close(OUTPUT);
 
-print STDERR "Finished generating new shareNice.js file\n";
+print STDERR "Finished generating new code.js file\n";
 # vi:set expandtab sts=4 sw=4:
