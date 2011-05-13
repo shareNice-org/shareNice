@@ -1,0 +1,6 @@
+#everything is html
+ForceType application/xhtml+xml
+#... unless the filename has an extension
+<filesmatch "\.">
+  ForceType none
+</filesmatch>
