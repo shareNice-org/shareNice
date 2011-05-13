@@ -37,7 +37,7 @@ while (<JSTEMPLATE>) {
 
 close(JSTEMPLATE);
 
-open (OUTPUT, "> ../shareNice.js") || die "sorry cant write to output file : ../shareNice.js\n";
+open (OUTPUT, "> ../code.js") || die "sorry cant write to output file : ../code.js\n";
 
 print OUTPUT $output;
 
