@@ -1,20 +1,28 @@
-jQuery(document).ready(function() {
-var shareBoxHTML = '<span><a href="" id="shareBoxLink">Share</a></span> <div id="share-box-wrapper"> <div id="share-box"> <div id="share-box-top"></div> <div id="share-box-body"> <ul id="socialLinks">';
+function shareNiceHide() {
+    if (document.getElementById) {
+       document.getElementById('share-box-wrapper').style.display= 'none';
+    }
+}
+
+function shareNiceShow() {
+    if (document.getElementById) {
+        document.getElementById('share-box-wrapper').style.display= 'block';
+    }
+}
+
+function shareNiceLoad() {
+    var shareNice = document.getElementById('shareNice');
+    var shareBoxHTML = '<span><a href="" id="shareBoxLink">Share</a></span> <div id="share-box-wrapper"> <div id="share-box"> <div id="share-box-top"></div> <div id="share-box-body"> <ul id="socialLinks">';
     if (shareNiceConfig != null) {
-      var currentPage = window.location;
-      for ( site in shareNiceConfig ) {        shareBoxHTML = shareBoxHTML + '<li><a href="' + shareNiceConfig[site].url.replace("%SHARE_URL%", currentPage) + '" target="_blank">' + '<img src="images/' + shareNiceConfig[site].icon + '" style="border: 0" alt="'+site+'_icon" />' + '</a></li>';
-      }
+        var currentPage = window.location;
+        for ( site in shareNiceConfig ) {
+            shareBoxHTML = shareBoxHTML + '<li><a href="' + shareNiceConfig[site].url.replace("%SHARE_URL%", currentPage) + '" target="_blank">' + '<img src="images/' + shareNiceConfig[site].icon + '" style="border: 0" alt="'+site+'_icon" />' + '</a></li>';
+        }
     }
     shareBoxHTML = shareBoxHTML + '<div style="clear:both;"></div></ul> </div> <div id="share-box-bottom"></div> </div> </div>';
-    $('div#shareNice').html(shareBoxHTML);
-    $('#shareNice').mouseenter(function() {
-        $('#share-box-wrapper').show();
-        $('#share-box-wrapper').css({'top':$(this).offset().top});
-        $('#share-box-wrapper').css({'left':$(this).offset().left});
-    });
-    $('#share-box-wrapper').mouseleave(function () {
-        $(this).hide();
-    });
-});
+    shareNice.innerHTML = shareBoxHTML;
+    shareNice.onmouseover = function(){shareNiceShow()};
+    shareNice.onmouseout= function(){shareNiceHide()};
+}
 
 /* vi:set expandtab sts=4 sw=4: */

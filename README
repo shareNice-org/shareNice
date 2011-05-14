@@ -1,17 +1,37 @@
-To install this social sharing system you will need to include jquery library. You can grab a version of jQuery from the below URL: 
+Updated README file 20110514. 
 
-http://jquery.com/
+shareNice can now be found on http://sharenice.org/. 
 
-We have tested this code with jquery version : jQuery JavaScript Library v1.6
+The software is written in order to provide social sharing features to web developers and website administrators who wish to maintain and protect their users' privacy. 
 
-Please grab jquery, and place jquery.js or jquery.min.js in this directory to make use of this
-ethical social sharing system.
+The current version of the system does not rely on anything but the user having JavaScript enabled. 
 
-The demo.html file supplied with this repository links to the Google Hosted jQuery library, you can choose to host jquery yourself, but you would have to change the URL of where jquery is hosted in the demo.html file.
+There are two ways which you can use shareNice on your website: 
+
+1. 	You can include the following div in your HTML '<div id="shareNice"></div>', adding ' onLoad="shareNiceLoad()" ' to your <body> element and including the following JavaScript in your HTML header : http://sharenice.org/code.js
+
+2. 	You can download the software from http://github.com/mischat/shareNice and you can host it on your own domain.  
+
+
+The demo file supplied with this repository shows how easy it is to include this XHTML-STRICT friends HTML+JS fragment to have a social sharing feature on your website. 
+
+The code you need to add to your HTML document is as simple as : 
+<html>
+<head>
+      <script src="http://sharenice.org/code.js" type="text/javascript"></script>
+      <link type="text/css" rel="stylesheet" href="http://sharenice.org/main.css" />   
+      <!--[if IE 6]>
+        <link type="text/css" rel="stylesheet" href="http://sharenice.org/ie6.css" >  
+      <![endif]-->      
+   </head>
+   <body onLoad="shareNiceLoad()">
+   <!-- This is the shareNice div you need to include in your HTML -->
+   <div id="shareNice" style="float:left"></div>
+   <!-- The rest of the magic is injected via .js -->
+
+   </body>
+</html>
 
 The .png files have been generated from the domain's favicon files, and converted using the grab-icons/snarf-icon.pl script. If you want to refresh/add more domain, you can run the perl script supplied in this repo. If you want to grab more icons, add the domain of the service to grab-icons/icon-domains.txt
 
-In order to generate the main "shareNice.js" file in the root directory of the repository, please : 
-
-cd gen-config 
-./gen-sharenice-config.pl
+In order to generate the main "code.js" file in the root directory of the repository, please the gen-config/gen-sharenice-config.pl script.
