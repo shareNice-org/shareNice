@@ -10,8 +10,8 @@ jQuery(document).ready(function() {
       shareBoxHTML = '<ul id="socialLinks">' + shareBoxHTML + '<div style="clear:both;"></div></ul>';
     }
     $('div#share-box-body').html(shareBoxHTML);
-    
-    $('a#shareBoxLink, #share-box-wrapper').mouseenter(function() {
+
+     $('#shareNice').mouseenter(function() {
         $('#share-box-wrapper').show();
         $('#share-box-wrapper').css({'top':$(this).offset().top});
         $('#share-box-wrapper').css({'left':$(this).offset().left});

@@ -29,7 +29,7 @@ $output =~ s/,\n$/\n/;
 
 $output .= "};\n";
 
-open (JSTEMPLATE, '<', 'shareNice.js.template') || die "can't open the main .js file\n";
+open (JSTEMPLATE, '<', 'code.js.template') || die "can't open the main .js file\n";
 
 while (<JSTEMPLATE>) {
     $output .= $_;
