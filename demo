@@ -20,6 +20,20 @@
           alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
      </p>
 
+   <p>Click the below Share button to see shareNice in action</p>
+
+   <p>All you need to do add the following html</p>
+
+   <pre>
+   &lt;div id="shareNice" style="float:left"&gt;&lt;/div&gt;
+   </pre>
+
+   <p>And include this one javascript file</p>
+
+   <pre>
+&lt;script src="code.js" type="text/javascript"&gt;&lt;/script&gt;
+   </pre>
+
    <!-- This is the shareNice div you need to include in your HTML -->
    <div id="shareNice" style="float:left"></div>
    <!-- The rest of the magic is injected via .js -->
