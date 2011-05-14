@@ -3,6 +3,7 @@ a#shareBoxLink {
     padding-left: 22px;
     cursor: pointer;
     text-decoration: none;
+    font-size: 80%;
 }
 
 #share-box-wrapper {
