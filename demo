@@ -22,16 +22,16 @@
 
    <p>Click the below Share button to see shareNice in action</p>
 
-   <p>All you need to do add the following html</p>
+   <p>All you need to do add the following html to where you want to place the shareNice button</p>
 
    <pre>
    &lt;div id="shareNice" style="float:left"&gt;&lt;/div&gt;
    </pre>
 
-   <p>And include this one javascript file</p>
+   <p>And include this one javascript file in your html &lt;head&gt; element</p>
 
    <pre>
-&lt;script src="code.js" type="text/javascript"&gt;&lt;/script&gt;
+	&lt;script src="code.js" type="text/javascript"&gt;&lt;/script&gt;
    </pre>
 
    <!-- This is the shareNice div you need to include in your HTML -->
