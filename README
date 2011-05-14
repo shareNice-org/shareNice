@@ -8,7 +8,8 @@ The current version of the system does not rely on anything but the user having 
 
 There are two ways which you can use shareNice on your website: 
 
-1. 	You can include the following div in your HTML '<div id="shareNice"></div>', adding ' onLoad="shareNiceLoad()" ' to your <body> element and including the following JavaScript in your HTML header : http://sharenice.org/code.js
+1. 	You can include the following div in your HTML '<div id="shareNice"></div>', and include the following JavaScript in your HTML header : http://sharenice.org/code.js 
+	'<script src="http://sharenice.org/code.js" type="text/javascript"></script>'
 
 2. 	You can download the software from http://github.com/mischat/shareNice and you can host it on your own domain.  
 

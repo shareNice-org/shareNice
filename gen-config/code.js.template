@@ -30,4 +30,7 @@ function shareNiceLoad() {
     shareNice.onmouseout= function(){shareNiceHide()};
 }
 
+/* This will make the the above function be fired onLoad on the <body> element */
+window.onload = shareNiceLoad;
+
 /* vi:set expandtab sts=4 sw=4: */
