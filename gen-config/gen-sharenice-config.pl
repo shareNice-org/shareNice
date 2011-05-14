@@ -1,5 +1,12 @@
 #!/usr/bin/perl -w
 
+my $hostedDomain = "http://sharenice.org/";
+
+if (scalar(@ARGV) == 1) {
+    $hostedDomain = $ARGV[0];
+}
+print STDERR "Generating code.js to be hosted at $hostedDomain\n";
+
 open(CONFIG, '<', 'sharenice-domains.txt') || die "cannot open domain config file: $!";
 
 my $count = 0;
@@ -32,6 +39,7 @@ $output .= "};\n";
 open (JSTEMPLATE, '<', 'code.js.template') || die "can't open the main .js file\n";
 
 while (<JSTEMPLATE>) {
+    s/%DOMAIN%/$hostedDomain/g;
     $output .= $_;
 }
 
