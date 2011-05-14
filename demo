@@ -31,7 +31,7 @@
    <p>And include this one javascript file in your html &lt;head&gt; element</p>
 
    <pre>
-	&lt;script src="code.js" type="text/javascript"&gt;&lt;/script&gt;
+   &lt;script src="code.js" type="text/javascript"&gt;&lt;/script&gt;
    </pre>
 
    <!-- This is the shareNice div you need to include in your HTML -->
