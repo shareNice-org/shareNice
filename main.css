@@ -1,5 +1,8 @@
-* { margin:0px auto; padding:0 }
-
+#shareNice {
+    margin:0px auto; 
+    padding: 0px;
+    width:52px;
+}
 a#shareBoxLink {
     background: url(images/icon-share.png) no-repeat center left;
     padding-left: 22px;
@@ -12,6 +15,7 @@ a#shareBoxLink {
     position:absolute;
     display:none;
     padding: 10px 0 0 0;
+    margin:0px auto;
 }
 
 #share-box-wrapper #share-box-top {
