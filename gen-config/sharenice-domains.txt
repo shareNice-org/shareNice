@@ -20,6 +20,7 @@ livejournal.com,livejournal.com.png,http://www.livejournal.com/update.bml?subjec
 mail.google.com,,
 mail.yahoo.com,,
 mister-wong.com,,
+myweb2.search.yahoo.com,mail.yahoo.com.png,http://myweb2.search.yahoo.com/myresults/bookmarklet?t=%SHARE_URL%
 mixx.com,mixx.com.png,http://www.mixx.com/submit?page_url=%SHARE_URL%
 mozillaca.com,,
 myspace.com,myspace.com.png,http://www.myspace.com/Modules/PostTo/Pages/?u=%SHARE_URL%
