@@ -37,6 +37,7 @@ a#shareBoxLink {
 }
 
 #share-box-wrapper ul#socialLinks li {
+    margin: 0;
     float: left;
     display: inline;
     padding: 0 2px 0 2px;
