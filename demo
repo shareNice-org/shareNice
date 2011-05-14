@@ -23,17 +23,9 @@
           alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
      </p>
 
-   <div id="shareNice" style="float:left">
-     <span><a href="" id="shareBoxLink">Share</a></span>
-     <div id="share-box-wrapper">
-       <div id="share-box">
-         <div id="share-box-top"></div>
-         <div id="share-box-body">
-         </div>
-         <div id="share-box-bottom"></div>
-       </div>
-     </div>
-   </div>
+   <!-- This is the shareNice div you need to include in your HTML -->
+   <div id="shareNice" style="float:left"></div>
+   <!-- The rest of the magic is injected via .js -->
 
    </body>
 </html>
