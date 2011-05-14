@@ -1,3 +1,5 @@
+* { margin:0px auto; padding:0 }
+
 a#shareBoxLink {
     background: url(images/icon-share.png) no-repeat center left;
     padding-left: 22px;
@@ -16,6 +18,7 @@ a#shareBoxLink {
     width: 138px;
     height: 16px;
     background: url(images/share-box-top.png) no-repeat center center;
+    margin-top: 10px;
 }
 
 #share-box-wrapper #share-box-bottom {
