@@ -1,25 +1,30 @@
 function shareNiceHide() {
     if (document.getElementById) {
-       document.getElementById('share-box-wrapper').style.display= 'none';
+       document.getElementById('shareNice-wrapper').style.display= 'none';
     }
 }
 
 function shareNiceShow() {
     if (document.getElementById) {
-        document.getElementById('share-box-wrapper').style.display= 'block';
+        document.getElementById('shareNice-wrapper').style.display= 'block';
     }
 }
 
 function shareNiceLoad() {
     var shareNice = document.getElementById('shareNice');
-    var shareBoxHTML = '<span><a href="" id="shareBoxLink">Share</a></span> <div id="share-box-wrapper"> <div id="share-box"> <div id="share-box-top"></div> <div id="share-box-body"> <ul id="socialLinks">';
+    shareNice.style.margin = '0px auto';
+    shareNice.style.padding = '0px';
+    shareNice.style.width = '3.8em';
+
+    var shareBoxHTML = '<span><a href="" id="shareNice-Link" style="background: url(images/icon-share.png) no-repeat center left; padding-left: 22px; cursor: pointer; text-decoration: none; font-size: 80%">Share</a></span> <div id="shareNice-wrapper" style="position:absolute; display:none; padding: 0; margin:0px auto;"> <div id="shareNice-box"> <div id="shareNice-box-top" style="width: 138px; height: 16px; background: url(images/share-box-top.png) no-repeat center center; margin-top: 10px;"></div> <div id="shareNice-box-body" style="width: 138px; background: url(images/share-box-body.png) repeat-y; margin: 0; padding: 0;"> <ul id="shareNice-socialLinks" style="margin: 0; padding: 1px 0 0 8px; list-style:none;">';
+
     if (shareNiceConfig != null) {
         var currentPage = window.location;
         for ( site in shareNiceConfig ) {
-            shareBoxHTML = shareBoxHTML + '<li><a href="' + shareNiceConfig[site].url.replace("%SHARE_URL%", currentPage) + '" target="_blank">' + '<img src="images/' + shareNiceConfig[site].icon + '" style="border: 0" alt="'+site+'_icon" />' + '</a></li>';
+            shareBoxHTML = shareBoxHTML + '<li style="margin: 0; float: left; display: inline; padding: 0 2px 0 2px;"><a href="' + shareNiceConfig[site].url.replace("%SHARE_URL%", currentPage) + '" target="_blank" style="margin:0px; padding:0px;">' + '<img src="images/' + shareNiceConfig[site].icon + '" style="border: 0" alt="'+site+'_icon" />' + '</a></li>';
         }
     }
-    shareBoxHTML = shareBoxHTML + '<div style="clear:both;"></div></ul> </div> <div id="share-box-bottom"></div> </div> </div>';
+    shareBoxHTML = shareBoxHTML + '<div style="clear:both;"></div></ul> </div> <div id="shareNice-box-bottom" style="width: 138px; height: 16px; background: url(images/share-box-bottom.png) no-repeat center center;"></div> </div> </div>';
     shareNice.innerHTML = shareBoxHTML;
     shareNice.onmouseover = function(){shareNiceShow()};
     shareNice.onmouseout= function(){shareNiceHide()};

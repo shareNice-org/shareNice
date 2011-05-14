@@ -3,7 +3,6 @@
    <head>
       <title>Demo shareNice</title>
       <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-      <link type="text/css" rel="stylesheet" href="main.css" />   
       <script src="code.js" type="text/javascript"></script>    
       <!--[if IE 6]>
         <link type="text/css" rel="stylesheet" href="ie6.css" >  
