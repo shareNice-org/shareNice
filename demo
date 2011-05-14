@@ -20,15 +20,15 @@
           alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
      </p>
 
-   <p>Click the below Share button to see shareNice in action</p>
+   <p>Click the below Share button to see shareNice in action. It will share the link for this page.</p>
 
-   <p>All you need to do add the following html to where you want to place the shareNice button</p>
+   <p>All you need to do add the following HTML to where you want to place the shareNice button:</p>
 
    <pre>
    &lt;div id="shareNice" style="float:left"&gt;&lt;/div&gt;
    </pre>
 
-   <p>And include this one javascript file in your html &lt;head&gt; element</p>
+   <p>And include this one javascript file in your HTML's &lt;head&gt; element:</p>
 
    <pre>
    &lt;script src="code.js" type="text/javascript"&gt;&lt;/script&gt;
