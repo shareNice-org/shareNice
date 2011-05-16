@@ -10,8 +10,8 @@ function shareNiceShow() {
         var originalDim = GetTopLeft(shareLink);
         var shareWrapper = document.getElementById('shareNice-wrapper');
         shareWrapper.style.display= 'block';
-        shareWrapper.style.top = originalDim.Top + 10;
-        shareWrapper.style.left = originalDim.Left;
+        shareWrapper.style.top = originalDim.Top + 10+"px";
+        shareWrapper.style.left = originalDim.Left+"px";
     }
 }
 
