@@ -6,7 +6,11 @@ function shareNiceHide() {
 
 function shareNiceShow() {
     if (document.getElementById) {
-        document.getElementById('shareNice-wrapper').style.display= 'block';
+        var outer = document.getElementById('shareNice-Link');
+        var wrapper = document.getElementById('shareNice-wrapper');
+        wrapper.style.display= 'block';
+        wrapper.style.top= outer.offsetTop + 20;
+        wrapper.style.left= outer.offsetLeft;
     }
 }
 
