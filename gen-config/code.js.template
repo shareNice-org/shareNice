@@ -31,6 +31,12 @@ function shareNiceLoad() {
 }
 
 /* This will make the the above function be fired onLoad on the <body> element */
-window.onload = shareNiceLoad;
+if (window.attachEvent) {
+    window.attachEvent('onload', shareNiceLoad);
+} else if (window.addEventListener) {
+    window.addEventListener('load', shareNiceLoad, false); 
+} else { 
+    document.addEventListener('load', shareNiceLoad, false);
+}
 
 /* vi:set expandtab sts=4 sw=4: */
