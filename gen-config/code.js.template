@@ -4,10 +4,28 @@ function shareNiceHide() {
     }
 }
 
-function shareNiceShow() {
+function shareNiceShow() {    
     if (document.getElementById) {
-        document.getElementById('shareNice-wrapper').style.display= 'block';
+        var shareLink = document.getElementById("shareNice-Link");
+        var originalDim = GetTopLeft(shareLink);
+        var shareWrapper = document.getElementById('shareNice-wrapper');
+        shareWrapper.style.display= 'block';
+        shareWrapper.style.top = originalDim.Top + 10;
+        shareWrapper.style.left = originalDim.Left;
     }
+}
+
+function GetTopLeft(elm) {
+    var x, y = 0;
+    x = elm.offsetLeft;
+    y = elm.offsetTop;
+    elm = elm.offsetParent;
+    while(elm != null) {
+        x = parseInt(x) + parseInt(elm.offsetLeft);
+        y = parseInt(y) + parseInt(elm.offsetTop);
+        elm = elm.offsetParent;
+    }
+    return {Top:y, Left: x};
 }
 
 function shareNiceLoad() {
