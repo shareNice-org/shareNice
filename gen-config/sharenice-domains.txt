@@ -34,7 +34,7 @@ stumbleupon.com,stumbleupon.com.png,http://www.stumbleupon.com/submit?url=%SHARE
 tinyurl.com,,
 www.tumblr.com,tumblr.com.png,http://www.tumblr.com/share
 evri.com,,
-twitter.com,twitter.com.png,http://twitter.com/home?status=%SHARE_URL%
+twitter.com,twitter.com.png,http://twitter.com/?status=%SHARE_URL%
 www.typepad.com,,
 wordpress.com,,
 www.yammer.com,,
