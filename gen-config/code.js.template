@@ -30,7 +30,7 @@ function GetTopLeft(elm) {
 
 function shareNiceLoad() {
     var shareNice = document.getElementById('shareNice');
-    shareNice.style.margin = '0px auto';
+    shareNice.style.margin = '0px';
     shareNice.style.padding = '0px';
     shareNice.style.width = '3.8em';
 
