@@ -1,6 +1,7 @@
 #!/usr/bin/perl -w
 
-my $hostedDomain = "http://sharenice.org/";
+#Please enter in the domain, without the protocol [http(s)] and without the trailing slash below
+my $hostedDomain = "sharenice.org";
 
 if (scalar(@ARGV) == 1) {
     $hostedDomain = $ARGV[0];
