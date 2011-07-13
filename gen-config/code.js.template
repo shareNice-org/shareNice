@@ -52,8 +52,12 @@ function shareNiceLoad() {
     }
 
     var prot = window.location.protocol;
+    var label = 'Share';
+    var lattr = shareNice.getAttribute( 'share-label' );
+    if( lattr != null )
+        label = lattr;
 
-    var shareBoxHTML = '<span><a href="" id="shareNice-Link" style="background: url('+prot+'//%DOMAIN%/images/icon-share.png) no-repeat center left; padding-left: 22px; cursor: pointer; text-decoration: none; font-size: 80%">Share</a></span> <div id="shareNice-wrapper" style="position:absolute; display:none; padding: 0; margin:0px auto;"> <div id="shareNice-box"> <div id="shareNice-box-top" style="width: 138px; height: 16px; background: url('+prot+'//%DOMAIN%/images/share-box-top.png) no-repeat center center; margin-top: 10px;"></div> <div id="shareNice-box-body" style="width: 138px; background: url('+prot+'//%DOMAIN%/images/share-box-body.png) repeat-y; margin: 0; padding: 0;"> <ul id="shareNice-socialLinks" style="margin: 0; padding: 1px 0 0 8px; list-style:none;">';
+    var shareBoxHTML = '<span><a href="" id="shareNice-Link" style="background: url('+prot+'//%DOMAIN%/images/icon-share.png) no-repeat center left; padding-left: 22px; cursor: pointer; text-decoration: none; font-size: 80%">'+label+'</a></span> <div id="shareNice-wrapper" style="position:absolute; display:none; padding: 0; margin:0px auto;"> <div id="shareNice-box"> <div id="shareNice-box-top" style="width: 138px; height: 16px; background: url('+prot+'//%DOMAIN%/images/share-box-top.png) no-repeat center center; margin-top: 10px;"></div> <div id="shareNice-box-body" style="width: 138px; background: url('+prot+'//%DOMAIN%/images/share-box-body.png) repeat-y; margin: 0; padding: 0;"> <ul id="shareNice-socialLinks" style="margin: 0; padding: 1px 0 0 8px; list-style:none;">';
 
     if (shareNiceConfig != null) {
         var currentPage = window.location.href;
