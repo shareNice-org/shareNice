@@ -42,6 +42,15 @@ function shareNiceLoad() {
     shareNice.style.width = '3.8em';
     shareNice.style.display = 'inline';
 
+    var filter = null;
+    var sattr = shareNice.getAttribute( 'services' );
+    if( sattr != null )    {
+        filter = {};
+        var a = sattr.split(',');
+        for( var s in a )
+            filter[a[s]] = 1;
+    }
+
     var prot = window.location.protocol;
 
     var shareBoxHTML = '<span><a href="" id="shareNice-Link" style="background: url('+prot+'//%DOMAIN%/images/icon-share.png) no-repeat center left; padding-left: 22px; cursor: pointer; text-decoration: none; font-size: 80%">Share</a></span> <div id="shareNice-wrapper" style="position:absolute; display:none; padding: 0; margin:0px auto;"> <div id="shareNice-box"> <div id="shareNice-box-top" style="width: 138px; height: 16px; background: url('+prot+'//%DOMAIN%/images/share-box-top.png) no-repeat center center; margin-top: 10px;"></div> <div id="shareNice-box-body" style="width: 138px; background: url('+prot+'//%DOMAIN%/images/share-box-body.png) repeat-y; margin: 0; padding: 0;"> <ul id="shareNice-socialLinks" style="margin: 0; padding: 1px 0 0 8px; list-style:none;">';
@@ -49,7 +58,8 @@ function shareNiceLoad() {
     if (shareNiceConfig != null) {
         var currentPage = window.location.href;
         for ( var site in shareNiceConfig ) {
-            shareBoxHTML = shareBoxHTML + '<li style="margin: 0; float: left; display: inline; padding: 0 2px 0 2px;"><a href="' + shareNiceConfig[site].url.replace("%SHARE_URL%", currentPage) + '" target="_blank" style="margin:0px; padding:0px;">' + '<img src="'+prot+'//%DOMAIN%/images/' + shareNiceConfig[site].icon + '" style="border: 0" alt="'+site+'_icon" />' + '</a></li>';
+            if( filter != null && !filter[site] ) continue;
+            shareBoxHTML = shareBoxHTML + '<li style="margin: 0; float: left; display: inline; padding: 0 2px 0 2px;"><a href="' + shareNiceConfig[site].url.replace("%SHARE_URL%", currentPage) + '" target="_blank" style="margin:0px; padding:0px;">' + '<img src="'+prot+'//sharenice.org/images/' + shareNiceConfig[site].icon + '" style="border: 0" alt="'+site+'_icon" />' + '</a></li>';
         }
     }
     shareBoxHTML = shareBoxHTML + '</ul><div style="clear:both;"></div> </div> <div id="shareNice-box-bottom" style="width: 138px; height: 16px; background: url('+prot+'//%DOMAIN%/images/share-box-bottom.png) no-repeat center center;"></div> </div> </div>';
