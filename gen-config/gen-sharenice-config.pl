@@ -22,8 +22,8 @@ while(<CONFIG>) {
         if (defined($details[1])) {
             $output .= " \"".$details[0]."\" :\n";
             $output .= "  {\n";
-            $output .= "    \"url\" : \"".$details[2]."\",\n";
-            $output .= "    \"icon\" : \"".$details[1]."\"\n" unless( "$details[1]" eq "$details[0].png" );
+            $output .= "    \"url\" : \"".$details[2]."\"\n";
+            $output .= "    \",icon\" : \"".$details[1]."\"\n" unless( "$details[1]" eq "$details[0].png" );
             $output .= "  },\n";
         }
 
