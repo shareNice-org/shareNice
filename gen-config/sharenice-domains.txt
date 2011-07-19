@@ -2,7 +2,7 @@ domain,icon,action
 amazon.com,,
 bebo.com,bebo.com.png,http://www.bebo.com/c/signin_popup?Member=N&Page=c%2Fshare&QueryString=Page%3Dc%2Fshare%26Url%3D%SHARE_URL%
 bit.ly,bit.ly.png,https://bitly.com/?url=%SHARE_URL%
-blogger.com,,
+blogger.com,blogger.com.png,https://www.google.com/accounts/ServiceLogin?service=blogger&hl=en_GB&ltmpl=popup&continue=http://www.blogger.com/start?successUrl%3D/blog-this.g?t%2526u%253D%SHARE_URL%
 delicious.com,delicious.com.png,http://del.icio.us/post?url=%SHARE_URL%
 diigo.com,,
 digg.com,digg.com.png,http://digg.com/submit?phase=2&url=%SHARE_URL%
