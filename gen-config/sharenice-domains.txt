@@ -1,7 +1,7 @@
 domain,icon,action
 amazon.com,,
-bebo.com,,
-bit.ly,,
+bebo.com,bebo.com,http://www.bebo.com/c/signin_popup?Member=N&Page=c%2Fshare&QueryString=Page%3Dc%2Fshare%26Url%3D%SHARE_URL%
+bit.ly,bit.ly.png,https://bitly.com/?url=%SHARE_URL%
 blogger.com,,
 delicious.com,delicious.com.png,http://del.icio.us/post?url=%SHARE_URL%
 diigo.com,,
