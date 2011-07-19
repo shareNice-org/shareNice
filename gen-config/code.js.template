@@ -41,7 +41,6 @@ function shareNiceLoad() {
         return;
     shareNice.style.margin = '0px';
     shareNice.style.padding = '0px';
-    shareNice.style.width = '3.8em';
     shareNice.style.display = 'inline';
 
     var filter = null;
