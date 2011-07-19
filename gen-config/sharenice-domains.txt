@@ -12,7 +12,7 @@ facebook.com,facebook.com.png,http://www.facebook.com/sharer.php?u=%SHARE_URL%
 friendfeed.com,,
 google.com,google.com.png,http://www.google.com/bookmarks/mark?op=add&bkmk=%SHARE_URL%
 hotmail.com,,
-identi.ca,identi.ca.png,https://identi.ca/?action=newnotice&status_textarea="%SHARE_URL%
+identi.ca,identi.ca.png,https://identi.ca/?action=newnotice&status_textarea='%SHARE_URL%'
 is.gd,,
 j.mp,,
 linkedin.com,linkedin.com.png,http://www.linkedin.com/shareArticle?mini=true&url=%SHARE_URL%
