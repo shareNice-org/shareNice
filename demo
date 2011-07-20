@@ -22,7 +22,7 @@
    <p>All you need to do add the following HTML to where you want to place the shareNice button:</p>
 
    <pre>
-   &lt;div id="shareNice" style="float:left"&gt;&lt;/div&gt;
+   &lt;div id="shareNice" share-label="Share this demo" style="float:left"&gt;&lt;/div&gt;
    </pre>
 
    <p>And include this one javascript file in your HTML's &lt;head&gt; element:</p>
@@ -32,7 +32,7 @@
    </pre>
 
    <!-- This is the shareNice div you need to include in your HTML -->
-   <div id="shareNice" style="float:left"></div>
+   <div id="shareNice" share-label="Share this demo" style="float:left"></div>
    <!-- The rest of the magic is injected via .js -->
 
    </body>
