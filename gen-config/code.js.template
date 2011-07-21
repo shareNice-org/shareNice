@@ -100,7 +100,7 @@ function shareNiceLoad() {
 
     shareBoxHTML = shareBoxHTML + '</ul>';     
     if (panelBottom == "default") {
-        shareBoxHTML = shareBoxHTML + '<a href="http://sharenice.org/">';
+        shareBoxHTML = shareBoxHTML + '<a style="padding:0;margin:0;"href="http://sharenice.org/">';
     }
     shareBoxHTML = shareBoxHTML + '<div style="clear:both;"></div> </div> <div id="shareNice-box-bottom" style="width: 216px; height: 44px; background: url('+prot+'//%DOMAIN%/images/panel/share-box-bottom-'+panelBottom+'.png) no-repeat top center;"></div>';
     if (panelBottom == "default") {
