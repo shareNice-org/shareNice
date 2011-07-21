@@ -22,6 +22,10 @@ function shareNiceShow() {
     }
 }
 
+function getPageTitle() {
+    return document.title;
+}
+
 function GetTopLeft(elm) {
     var x, y = 0;
     x = elm.offsetLeft;
@@ -73,11 +77,16 @@ function shareNiceLoad() {
 
     if (shareNiceConfig != null) {
         var currentPage = window.location.href;
+        var title = document.title;
+        if (title.length < 1) {
+            title = currentPage;
+        }
         for ( var site in shareNiceConfig ) {
             if( filter != null && !filter[site] ) continue;
             var icon=site+'.png';
             if( shareNiceConfig[site].icon != null ) icon = shareNiceConfig[site].icon;
-            shareBoxHTML = shareBoxHTML + '<li style="margin: 0; float: left; display: inline; padding: 0 2px 0 2px;"><a href="' + shareNiceConfig[site].url.replace("%SHARE_URL%", currentPage) + '" target="_blank" style="margin:0px; padding:0px;">' + '<img src="'+prot+'//sharenice.org/images/' + icon + '" style="border: 0" alt="'+site+'_icon" title="'+site+'" />' + '</a></li>';
+            
+            shareBoxHTML = shareBoxHTML + '<li style="margin: 0; float: left; display: inline; padding: 0 2px 0 2px;"><a href="' + shareNiceConfig[site].url.replace("%SHARE_URL%", currentPage).replace("%SHARE_TITLE%, title) + '" target="_blank" style="margin:0px; padding:0px;">' + '<img src="'+prot+'//sharenice.org/images/' + icon + '" style="border: 0" alt="'+site+'_icon" title="'+site+'" />' + '</a></li>';
         }
     }
     shareBoxHTML = shareBoxHTML + '</ul><div style="clear:both;"></div> </div> <div id="shareNice-box-bottom" style="width: 216px; height: 44px; background: url('+prot+'//%DOMAIN%/images/panel/share-box-bottom-'+panelBottom+'.png) no-repeat top center;"></div> </div> </div>';
