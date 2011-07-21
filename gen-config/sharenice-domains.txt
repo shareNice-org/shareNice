@@ -6,9 +6,9 @@ blogger.com,blogger.com.png,https://www.google.com/accounts/ServiceLogin?service
 delicious.com,delicious.com.png,http://del.icio.us/post?url=%SHARE_URL%
 diigo.com,,
 digg.com,digg.com.png,http://digg.com/submit?phase=2&url=%SHARE_URL%
-email,icon-email.png,mailto:?subject=Look&body=%SHARE_URL%
+email,icon-email.png,mailto:?subject=%SHARE_TITLE%&body=%SHARE_URL%
 evernote.com,evernote.com.png,https://www.evernote.com/clip.action?url=%SHARE_URL%
-facebook.com,facebook.com.png,http://www.facebook.com/sharer.php?u=%SHARE_URL%
+facebook.com,facebook.com.png,http://www.facebook.com/sharer.php?u=%SHARE_URL%&t=%SHARE_TITLE%
 friendfeed.com,,
 google.com,google.com.png,http://www.google.com/bookmarks/mark?op=add&bkmk=%SHARE_URL%
 hotmail.com,,
