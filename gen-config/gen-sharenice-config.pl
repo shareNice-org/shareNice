@@ -1,4 +1,6 @@
 #!/usr/bin/perl -w
+use LWP::UserAgent;
+use URI::Escape;
 
 #Please enter in the domain, without the protocol [http(s)] and without the trailing slash below
 my $hostedDomain = "sharenice.org";
@@ -46,10 +48,25 @@ while (<JSTEMPLATE>) {
 
 close(JSTEMPLATE);
 
+#Get shortended output 
+my $google = 'http://closure-compiler.appspot.com/compile';
+my $ua = LWP::UserAgent->new;
+
+my $lame = uri_escape($output);
+
+my $googleres = $ua->post($google, 
+            [ 'js_code' => $output,
+            'compilation_level' => 'WHITESPACE_ONLY' ,
+            'output_format' => 'text' ,
+            'output_info' => 'compiled_code' ]
+            ) ;
+die "$google error: ", $googleres->status_line
+    unless $googleres->is_success;
+
+$output = $googleres->content;
+
 open (OUTPUT, "> ../code.js") || die "sorry cant write to output file : ../code.js\n";
-
 print OUTPUT $output;
-
 close(OUTPUT);
 
 print STDERR "Finished generating new code.js file\n";
