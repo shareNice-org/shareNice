@@ -38,3 +38,4 @@ twitter.com,twitter_com.png,http://twitter.com/?status=%SHARE_URL%
 www.typepad.com,,
 wordpress.com,,
 www.yammer.com,,
+plusone.google.com,plusone_google_com.png,https://plusone.google.com/_/+1/confirm?url=%SHARE_URL%

@@ -23,7 +23,7 @@
 
    <pre>
    &lt;div id="shareNice" share-label="Share this demo" color-scheme="black"
-    icon-size="32" panel-bottom="plain" services="facebook.com,digg.com,email,delicious.com,twitter.com" 
+    icon-size="32" panel-bottom="plain" services="plusone.google.com,facebook.com,digg.com,email,delicious.com,twitter.com" 
     style="float:left"&gt;&lt;/div&gt;
    </pre>
 
@@ -34,7 +34,7 @@
    </pre>
 
    <!-- This is the shareNice div you need to include in your HTML -->
-   <div id="shareNice" share-label="Share this demo" color-scheme="black" icon-size="32" panel-bottom="plain" services="facebook.com,digg.com,email,delicious.com,twitter.com" style="float:left"></div>
+   <div id="shareNice" share-label="Share this demo" color-scheme="black" icon-size="32" panel-bottom="plain" services="plusone.google.com,facebook.com,digg.com,email,delicious.com,twitter.com" style="float:left"></div>
    <!-- The rest of the magic is injected via .js -->
 
    </body>
