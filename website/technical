@@ -1,0 +1,80 @@
+<?php
+    require_once 'gen-html-class.php';
+
+    $html = new GenericHTML;
+
+    $html->html_header();
+
+?>    
+    <h2>Technical Information</h2>
+
+    <h3>Using shareNice on your website</h3>
+
+    <p>To add our uninstrusive social sharing feature, see the <a href="http://sharenice.org/demo">demo</a>, to your website all you need to do is include the following javascript code on your webpage:</p>
+   <pre>
+&lt;script src="http://sharenice.org/code.js" type="text/javascript"&gt;&lt;/script&gt;    
+  </pre>
+
+   <p>and add the following div element to your page source:</p>
+   <pre>
+&lt;div id="shareNice"&gt;&lt;/div&gt;
+   </pre> 
+
+
+    <h3>Configuring the shareNice lightbox</h3>
+	
+    <p>One can now reconfigure shareNice, using the following five attributes</p>
+
+    <ul>
+     <li><code>services</code>: Takes a comma separate list of domain's which you are interested in including in your shareNice lightbox.</li>
+     <br/>
+     <li><code>share-label</code>: Allows a website owner to config the text "Share" as they please.</li>
+     <li><code>color-scheme</code>: You can choose one of "black", "blue", "green", "orange", "pink", "red" to customise.</li>
+     <li><code>icon-size</code>: either "16" or "32", this defines the size of the shareNice icon.</li>
+     <li><code>panel-bottom</code>: either "default" or "plain". Where: "plain" gives a non-branded lightbox.</li>
+    </ul>
+
+    <h3>Example config</h3>
+
+   <p>If you want to config the text to say "shareNice this page" and only have icons for the following sites:  <code>facebook.com,digg.com,email,delicious.com,twitter.com</code>, use the following HTML on your page:</p>
+   <pre>
+&lt;div id="shareNice" services="facebook.com,digg.com,email,delicious.com,twitter.com" 
+share-label="shareNice this page"&gt;&lt;/div&gt; 
+   </pre> 
+
+    <p>See <a href="http://mmt.me.uk/">mmt.me.uk</a> for an example of this configuration setup in action.</p>
+
+    <h3>Our setup on sharenice.org</h3>
+
+    <p>We are hosting sharenice as a virtual host on <a href="http://httpd.apache.org/">an Apache Server</a>, using the following httpd.conf file</p>
+
+    <pre>
+<VirtualHost *:80>
+        DocumentRoot /var/www/vhosts/sharenice.org/httpdocs
+        ServerName www.sharenice.org
+        ServerAlias sharenice.org
+        UseCanonicalName Off
+
+        CustomLog /dev/null combined
+
+        RewriteEngine on
+        RewriteCond %{HTTP_HOST} ^www.sharenice.org [NC]
+        RewriteRule ^(.*)$ http://sharenice.org/$1 [L,R=301]
+
+</VirtualHost>
+</pre>
+
+   <p>As you can see, we are redirect ALL logs to <em>/dev/null</em> and as a result we are not collecting ANY information about users of sharenice.org.</p>
+
+   <h3>You can host your own version of shareNice</h3>
+
+   <p>If you would like to host your version of the shareNice tool, you can download and follow the provided instructions in <a href="http://github.com/mischat/shareNice">shareNice's repository on github</a>. shareNice is <a href="http://www.gnu.org/licenses/license-list.html#GPLCompatibleLicenses">free software</a> please see our <a href="https://github.com/mischat/shareNice/blob/master/LICENSE.txt">license</a> for more information.</p>
+
+
+   <h3>Questions, Comments, and Feedback</h3>
+
+    <p>If you have any questions regarding shareNice please either pop into #shareNice on irc.freenode.net, or email [shareNice at mmt me uk]. All comments and feedback are welcome. shareNice is an <a href="http://github.com/mischat/shareNice">open-source project</a> if you feel like something can be done better feel free to hack away yourself or submit a bug-report on the <a href="http://github.com/mischat/shareNice/issues/">shareNice git repository's issue tracker</a>.</p>
+
+<?php
+    $html->html_footer();
+?>
