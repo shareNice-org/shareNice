@@ -82,7 +82,7 @@ function shareNiceLoad() {
     var panelBottom = "default";
     var panelBottomAttr = shareNice.getAttribute( 'panel-bottom' );
     
-    var zindexconf = shareNice.getAttribute( 'zindex' );
+    var zindexconf = shareNice.getAttribute( 'share-zindex' );
     
     var shareniceWrapperStyle = 'position:absolute; display:none; padding: 0; margin:0px auto;';
     if ( ( zindexconf != null) ) {
