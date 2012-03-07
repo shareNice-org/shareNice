@@ -48,7 +48,7 @@ function shareNiceLoad() {
     shareNice.style.display = 'inline';
 
     var filter = null;
-    var sattr = shareNice.getAttribute( 'services' );
+    var sattr = shareNice.getAttribute( 'data-services' );
     if( sattr != null )    {
         filter = {};
         var a = sattr.split(',');
@@ -58,31 +58,31 @@ function shareNiceLoad() {
 
     var prot = window.location.protocol;
     var label = 'Share';
-    var lattr = shareNice.getAttribute( 'share-label' );
+    var lattr = shareNice.getAttribute( 'data-share-label' );
     if( lattr != null )
         label = lattr;
 
     var cScheme = "orange";
-    var cSchemeAttr = shareNice.getAttribute( 'color-scheme' );
+    var cSchemeAttr = shareNice.getAttribute( 'data-color-scheme' );
     if( cSchemeAttr != null )
         cScheme = cSchemeAttr;
 
     var iconSize = "16";
-    var iconSizeAttr = shareNice.getAttribute( 'icon-size' );
+    var iconSizeAttr = shareNice.getAttribute( 'data-icon-size' );
     if ( ( iconSizeAttr != null ) && ( iconSizeAttr == '32' ) )
          iconSize = iconSizeAttr;
     var iconSizeInt = parseInt(iconSize);
     var iconImg = 'icon-share-'+cScheme+iconSize+'.png';
 
     var labelTopPadding = 0;
-    var labelTopPaddingAttr = shareNice.getAttribute( 'label-topPadding' );
+    var labelTopPaddingAttr = shareNice.getAttribute( 'data-label-topPadding' );
     if ( ( labelTopPaddingAttr != null ) && ( typeof parseInt(labelTopPaddingAttr) == "number" ) )
          labelTopPadding = parseInt(labelTopPaddingAttr);
 
     var panelBottom = "default";
-    var panelBottomAttr = shareNice.getAttribute( 'panel-bottom' );
+    var panelBottomAttr = shareNice.getAttribute( 'data-panel-bottom' );
     
-    var zindexconf = shareNice.getAttribute( 'share-zindex' );
+    var zindexconf = shareNice.getAttribute( 'data-share-zindex' );
     
     var shareniceWrapperStyle = 'position:absolute; display:none; padding: 0; margin:0px auto;';
     if ( ( zindexconf != null) ) {
