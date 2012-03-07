@@ -22,8 +22,8 @@
    <p>All you need to do add the following HTML to where you want to place the shareNice button:</p>
 
    <pre>
-   &lt;div id="shareNice" share-label="Share this demo" color-scheme="black"
-    icon-size="32" panel-bottom="plain" services="plusone.google.com,facebook.com,digg.com,email,delicious.com,twitter.com" 
+   &lt;div id="shareNice" data-share-label="Share this demo" data-color-scheme="black"
+    data-icon-size="32" data-panel-bottom="plain" data-services="plusone.google.com,facebook.com,digg.com,email,delicious.com,twitter.com" 
     style="float:left"&gt;&lt;/div&gt;
    </pre>
 

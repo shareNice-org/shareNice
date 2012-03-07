@@ -26,20 +26,21 @@
     <p>One can now reconfigure shareNice, using the following five attributes</p>
 
     <ul>
-     <li><code>services</code>: Takes a comma separate list of domain's which you are interested in including in your shareNice lightbox.</li>
+     <li><code>data-services</code>: Takes a comma separate list of domain's which you are interested in including in your shareNice lightbox.</li>
      <br/>
-     <li><code>share-label</code>: Allows a website owner to config the text "Share" as they please.</li>
-     <li><code>color-scheme</code>: You can choose one of "black", "blue", "green", "orange", "pink", "red" to customise.</li>
-     <li><code>icon-size</code>: either "16" or "32", this defines the size of the shareNice icon.</li>
-     <li><code>panel-bottom</code>: either "default" or "plain". Where: "plain" gives a non-branded lightbox.</li>
+     <li><code>data-share-label</code>: Allows a website owner to config the text "Share" as they please.</li>
+     <li><code>data-color-scheme</code>: You can choose one of "black", "blue", "green", "orange", "pink", "red" to customise.</li>
+     <li><code>data-icon-size</code>: either "16" or "32", this defines the size of the shareNice icon.</li>
+     <li><code>data-panel-bottom</code>: either "default" or "plain". Where: "plain" gives a non-branded lightbox.</li>
+     <li><code>data-share-zindex</code>: you can provide a z-index number here, if your website CSS uses z-index, you can add an optional z-index, see <a href="http://jablonskis.org">an example on jablonskis.org</a></li>
     </ul>
 
     <h3>Example config</h3>
 
    <p>If you want to config the text to say "shareNice this page" and only have icons for the following sites:  <code>facebook.com,digg.com,email,delicious.com,twitter.com</code>, use the following HTML on your page:</p>
    <pre>
-&lt;div id="shareNice" services="facebook.com,digg.com,email,delicious.com,twitter.com" 
-share-label="shareNice this page"&gt;&lt;/div&gt; 
+&lt;div id="shareNice" data-services="facebook.com,digg.com,email,delicious.com,twitter.com" 
+data-share-label="shareNice this page"&gt;&lt;/div&gt; 
    </pre> 
 
     <p>See <a href="http://mmt.me.uk/">mmt.me.uk</a> for an example of this configuration setup in action.</p>
