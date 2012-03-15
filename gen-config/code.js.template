@@ -105,7 +105,7 @@ function shareNiceLoad() {
             var icon=site+'.png';
             if( shareNiceConfig[site].icon != null ) icon = shareNiceConfig[site].icon;
             
-            shareBoxHTML = shareBoxHTML + '<li style="margin: 0; float: left; display: inline; padding: 0 2px 0 2px;"><a href="' + shareNiceConfig[site].url.replace("%SHARE_URL%", currentPage).replace("%SHARE_TITLE%", title) + '" target="_blank" style="margin:0px; padding:0px;">' + '<img src="'+prot+'//%DOMAIN%/images/' + icon + '" style="border: 0" alt="'+site+'_icon" title="'+site+'" />' + '</a></li>';
+            shareBoxHTML = shareBoxHTML + '<li style="margin: 0; float: left; display: inline; padding: 0 2px 0 2px;"><a href="' + shareNiceConfig[site].url.replace("%SHARE_URL%", encodeURIComponent(currentPage)).replace("%SHARE_TITLE%", encodeURIComponent(title)) + '" target="_blank" style="margin:0px; padding:0px;">' + '<img src="'+prot+'//%DOMAIN%/images/' + icon + '" style="border: 0" alt="'+site+'_icon" title="'+site+'" />' + '</a></li>';
         }
     }
 
