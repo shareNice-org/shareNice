@@ -1,11 +1,3 @@
-<?php
-    require_once 'gen-html-class.php';
-
-    $html = new GenericHTML;
-
-    $html->html_header();
-
-?>    
     <h2>Technical Information</h2>
 
     <h3>Using shareNice on your website</h3>
@@ -24,7 +16,9 @@
     <h3>Configuring the shareNice lightbox</h3>
 	
     <p>One can now reconfigure shareNice, using the following five attributes</p>
-
+---
+layout: default
+---
     <ul>
      <li><code>data-services</code>: Takes a comma separate list of domain's which you are interested in including in your shareNice lightbox.</li>
      <br/>
@@ -76,6 +70,4 @@ data-share-label="shareNice this page"&gt;&lt;/div&gt;
 
     <p>If you have any questions regarding shareNice please either pop into #shareNice on irc.freenode.net, or email [shareNice at mmt me uk]. All comments and feedback are welcome. shareNice is an <a href="http://github.com/mischat/shareNice">open-source project</a> if you feel like something can be done better feel free to hack away yourself or submit a bug-report on the <a href="http://github.com/mischat/shareNice/issues/">shareNice git repository's issue tracker</a>.</p>
 
-<?php
-    $html->html_footer();
-?>
+
