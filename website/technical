@@ -10,9 +10,9 @@
 
     <h3>Using shareNice on your website</h3>
 
-    <p>To add our uninstrusive social sharing feature, see the <a href="/demo">demo</a>, to your website all you need to do is include the following javascript code on your webpage:</p>
+    <p>To add our uninstrusive social sharing feature, see the <a href="http://sharenice.org/demo">demo</a>, to your website all you need to do is include the following javascript code on your webpage:</p>
    <pre>
-&lt;script src="/code.js" type="text/javascript"&gt;&lt;/script&gt;    
+&lt;script src="http://sharenice.org/code.js" type="text/javascript"&gt;&lt;/script&gt;    
   </pre>
 
    <p>and add the following div element to your page source:</p>
