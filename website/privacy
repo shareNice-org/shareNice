@@ -17,7 +17,7 @@
      <li>... as a result we have NO data to share with ANYONE.</li>
     </ul>
 
-    <p>More information about how we maintain your users' privacy can be found on our <a href="http://sharenice.org/website/technical">technical information page</a>. Finally is it worth mentioning that shareNice is NOT a money making venture and we have NO intention of monetizing the way this service operates. This instance of shareNice is hosted on a server provided by <a href="http://www.garlik.com/">Garlik Ltd</a>.</p>
+    <p>More information about how we maintain your users' privacy can be found on our <a href="/website/technical">technical information page</a>. Finally is it worth mentioning that shareNice is NOT a money making venture and we have NO intention of monetizing the way this service operates. This instance of shareNice is hosted on a server provided by <a href="http://www.garlik.com/">Garlik Ltd</a>.</p>
 
 <?php
     $html->html_footer();
