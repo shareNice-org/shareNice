@@ -49,4 +49,4 @@ An example of a customised shareNice lightbox could be like so :
 
 The .png files have been generated from the domain's favicon files, and converted using the grab-icons/snarf-icon.pl script. If you want to refresh/add more domain, you can run the perl script supplied in this repo. If you want to grab more icons, add the domain of the service to grab-icons/icon-domains.txt
 
-In order to generate the main "code.js" file in the root directory of the repository, please the gen-config/gen-sharenice-config.pl script.
+In order to generate the main "code.js" file in the root directory of the repository, please "cd gen-config" and then run the "./gen-sharenice-config.pl" script.
