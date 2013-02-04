@@ -84,7 +84,7 @@ function shareNiceLoad() {
     
     var zindexconf = shareNice.getAttribute( 'data-share-zindex' );
    
-    var hover = true && !shareNice.hasAttribute( 'data-no-hover' );
+    var hover = !shareNice.hasAttribute( 'data-no-hover' );
  
     var shareniceWrapperStyle = '';
 
