@@ -23,7 +23,7 @@
 
     <h3>Configuring the shareNice lightbox</h3>
 	
-    <p>One can now reconfigure shareNice, using the following five attributes</p>
+    <p>One can now reconfigure shareNice, using the following seven attributes</p>
 
     <ul>
      <li><code>data-services</code>: Takes a comma separate list of domain's which you are interested in including in your shareNice lightbox.</li>
@@ -33,6 +33,7 @@
      <li><code>data-icon-size</code>: either "16" or "32", this defines the size of the shareNice icon.</li>
      <li><code>data-panel-bottom</code>: either "default" or "plain". Where: "plain" gives a non-branded lightbox.</li>
      <li><code>data-share-zindex</code>: you can provide a z-index number here, if your website CSS uses z-index, you can add an optional z-index, see <a href="http://jablonskis.org">an example on jablonskis.org</a></li>
+     <li><code>data-no-hover</code>: changes the default behaviour, to always show the icons, without the share-label or the shareNice icon being displayed. You don't need to specify a value for this attribute.</li>
     </ul>
 
     <h3>Example config</h3>
