@@ -1,28 +1,55 @@
-<?php
-    require_once 'gen-html-class.php';
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <head>
+      <title>shareNice - Awesome URL Sharing Service</title>
+      <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 
-    $html = new GenericHTML;
+      <link rel="shortcut icon" href="images/icon-share-orange16.png" />
+      <meta name="keywords" content="shareNice sharing social ethical unintrusive opensource"/>
+      <meta name="description" content="shareNice is an uninstrusive opensource social sharing widget which is pro user privacy" />
+      <link rel="stylesheet" type="text/css" href="styles/style.css" />
+      <!--[if IE 6]>
+        <link type="text/css" rel="stylesheet" href="ie6.css" >
+      <![endif]-->
+  </head>
+  <body>
+   <div class="logo">
+    <a href="/"><img alt="ShareNice" src="images/original_image.png"/></a>
+   </div>
 
-    $html->html_header();
+   <div rel="foaf:maker">
+    <div typeof="foaf:Person" class="head">
+	<a style="display:none" rel="foaf:weblog" href="http://mmt.me.uk/blog/">blog</a>
+     <small>
+      <a href="https://github.com/mischat/shareNice/commits/master.atom" title="git repo commit feed"><img src="images/rss.png" alt="RSS feed"/></a> <span id="nav-header"><a href="index">home</a> | <a href="technical">technical info</a> | <a href="demo">demo</a> | <a href="http://github.com/mischat/shareNice">source-code</a> | <a href="privacy">privacy policy</a></span>
+     </small>
+    </div>
+   </div>
+   <div class="main">
+    <!-- The following div is needed if you want to use shareNice -->
+    <div id="shareNice" share-label="share"></div>
+    <div style="clear:right;"></div>
+    <!-- plus some styling -->
 
-?>    
+    <h1>shareNice : unintrusive social sharing</h1>
+
     <h2>Technical Information</h2>
 
     <h3>Using shareNice on your website</h3>
 
     <p>To add our uninstrusive social sharing feature, see the <a href="/demo">demo</a>, to your website all you need to do is include the following javascript code on your webpage:</p>
    <pre>
-&lt;script src="/code.js" type="text/javascript"&gt;&lt;/script&gt;    
+&lt;script src="/code.js" type="text/javascript"&gt;&lt;/script&gt;
   </pre>
 
    <p>and add the following div element to your page source:</p>
    <pre>
 &lt;div id="shareNice"&gt;&lt;/div&gt;
-   </pre> 
+   </pre>
 
 
     <h3>Configuring the shareNice lightbox</h3>
-	
+
     <p>One can now reconfigure shareNice, using the following five attributes</p>
 
     <ul>
@@ -39,9 +66,9 @@
 
    <p>If you want to config the text to say "shareNice this page" and only have icons for the following sites:  <code>facebook.com,digg.com,email,delicious.com,twitter.com</code>, use the following HTML on your page:</p>
    <pre>
-&lt;div id="shareNice" data-services="facebook.com,digg.com,email,delicious.com,twitter.com" 
-data-share-label="shareNice this page"&gt;&lt;/div&gt; 
-   </pre> 
+&lt;div id="shareNice" data-services="facebook.com,digg.com,email,delicious.com,twitter.com"
+data-share-label="shareNice this page"&gt;&lt;/div&gt;
+   </pre>
 
     <p>See <a href="http://mmt.me.uk/">mmt.me.uk</a> for an example of this configuration setup in action.</p>
 
@@ -76,6 +103,16 @@ data-share-label="shareNice this page"&gt;&lt;/div&gt;
 
     <p>If you have any questions regarding shareNice please either pop into #shareNice on irc.freenode.net, or email [shareNice at mmt me uk]. All comments and feedback are welcome. shareNice is an <a href="http://github.com/mischat/shareNice">open-source project</a> if you feel like something can be done better feel free to hack away yourself or submit a bug-report on the <a href="http://github.com/mischat/shareNice/issues/">shareNice git repository's issue tracker</a>.</p>
 
-<?php
-    $html->html_footer();
-?>
+   </div> <!-- end main body -->
+
+   <div class="foot">
+    <p>
+     <small>
+    Hand-rolled in <a href="http://www.vim.org/">vi</a> 2011
+     </small>
+    </p>
+   </div>
+
+   <script src="http://sharenice.org/code.js" type="text/javascript"></script>
+   </body>
+</html>

@@ -1,29 +1,29 @@
-Updated README file 20110514. 
+Updated README file 20110514.
 
-shareNice can now be found on http://sharenice.org/. 
+shareNice can now be found on http://sharenice.org/.
 
-The software is written in order to provide social sharing features to web developers and website administrators who wish to maintain and protect their users' privacy. 
+The software is written in order to provide social sharing features to web developers and website administrators who wish to maintain and protect their users' privacy.
 
-The current version of the system does not rely on anything but the user having JavaScript enabled. 
+The current version of the system does not rely on anything but the user having JavaScript enabled.
 
-There are two ways which you can use shareNice on your website: 
+There are two ways which you can use shareNice on your website:
 
-1. 	You can include the following div in your HTML '<div id="shareNice"></div>', and include the following JavaScript in your HTML header : http://sharenice.org/code.js 
+1. 	You can include the following div in your HTML '<div id="shareNice"></div>', and include the following JavaScript in your HTML header : http://sharenice.org/code.js
 	'<script src="http://sharenice.org/code.js" type="text/javascript"></script>'
 
-2. 	You can download the software from http://github.com/mischat/shareNice and you can host it on your own domain.  
+2. 	You can download the software from http://github.com/mischat/shareNice and you can host it on your own domain.
 
 
-The demo file supplied with this repository shows how easy it is to include this XHTML-STRICT friends HTML+JS fragment to have a social sharing feature on your website. 
+The demo file supplied with this repository shows how easy it is to include this XHTML-STRICT friends HTML+JS fragment to have a social sharing feature on your website.
 
-The code you need to add to your HTML document is as simple as : 
+The code you need to add to your HTML document is as simple as :
 <html>
 <head>
       <script src="http://sharenice.org/code.js" type="text/javascript"></script>
-      <link type="text/css" rel="stylesheet" href="http://sharenice.org/main.css" />   
+      <link type="text/css" rel="stylesheet" href="http://sharenice.org/main.css" />
       <!--[if IE 6]>
-        <link type="text/css" rel="stylesheet" href="http://sharenice.org/ie6.css" >  
-      <![endif]-->      
+        <link type="text/css" rel="stylesheet" href="http://sharenice.org/ie6.css" >
+      <![endif]-->
    </head>
    <body onLoad="shareNiceLoad()">
    <!-- This is the shareNice div you need to include in your HTML -->
@@ -43,7 +43,7 @@ color-scheme: You can choose one of "black", "blue", "green", "orange", "pink", 
 icon-size: either "16" or "32", this defines the size of the shareNice icon.
 panel-bottom: either "default" or "plain". Where: "plain" gives a non-branded lightbox.
 
-An example of a customised shareNice lightbox could be like so : 
+An example of a customised shareNice lightbox could be like so :
 
 <div id="shareNice" color-scheme="black" icon-size="32" share-label="Share this demo" panel-bottom="plain"></div>
 

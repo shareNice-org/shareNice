@@ -3,17 +3,17 @@
    <head>
       <title>Demo shareNice</title>
       <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-      <script src="code.js" type="text/javascript"></script>    
+      <script src="http://sharenice.org/code.js" type="text/javascript"></script>
    </head>
    <body>
      <p id="w3cValid">
          <a href="http://jigsaw.w3.org/css-validator/check/referer">
            <img style="border:0;width:88px;height:31px"
-            src="vcss.png"
+            src="images/vcss.png"
             alt="Valid CSS!" /></a>
-  
-        <a href="http://validator.w3.org/check?uri=referer"> 
-         <img style="border:0" src="valid-xhtml10.png"
+
+        <a href="http://validator.w3.org/check?uri=referer">
+         <img style="border:0" src="images/valid-xhtml10.png"
           alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
      </p>
 
@@ -23,7 +23,7 @@
 
    <pre>
    &lt;div id="shareNice" data-share-label="Share this demo" data-color-scheme="black"
-    data-icon-size="32" data-panel-bottom="plain" data-services="plus.google.com,facebook.com,digg.com,email,delicious.com,twitter.com" 
+    data-icon-size="32" data-panel-bottom="plain" data-services="plus.google.com,facebook.com,digg.com,email,delicious.com,twitter.com"
     style="float:left"&gt;&lt;/div&gt;
    </pre>
 
