@@ -56,7 +56,7 @@ public class FileHandler extends AbstractHandler {
         ((HttpOutput) response.getOutputStream()).sendContent(FileChannel.open(file.toPath(), StandardOpenOption.READ));
     }
 
-    protected Resource getResource(String path) throws MalformedURLException {
+    protected Resource getResource(String path) throws IOException {
         if(path != null && path.startsWith("/")) {
             Resource base = this.baseResource;
             if(base == null) {
@@ -66,8 +66,8 @@ public class FileHandler extends AbstractHandler {
                     path = URIUtil.canonicalPath(path);
                     Resource e = base.addPath(path);
                     return e;
-                } catch (Exception ex) {
-                    return null;
+                } catch (IOException ex) {
+                    throw ex;
                 }
             }
         } else {
@@ -75,7 +75,7 @@ public class FileHandler extends AbstractHandler {
         }
     }
 
-    protected Resource getResource(HttpServletRequest request) throws MalformedURLException {
+    protected Resource getResource(HttpServletRequest request) throws IOException {
         Boolean included = Boolean.valueOf(request.getAttribute("javax.servlet.include.request_uri") != null);
         String servletPath;
         String pathInfo;
