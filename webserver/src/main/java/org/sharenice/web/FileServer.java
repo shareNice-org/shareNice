@@ -1,13 +1,23 @@
 package org.sharenice.web;
 
+import org.eclipse.jetty.http.MimeTypes;
 import org.eclipse.jetty.http2.server.HTTP2CServerConnectionFactory;
 import org.eclipse.jetty.server.*;
+import org.eclipse.jetty.server.handler.AbstractHandler;
 import org.eclipse.jetty.server.handler.DefaultHandler;
 import org.eclipse.jetty.server.handler.HandlerList;
 import org.eclipse.jetty.server.handler.ResourceHandler;
 import org.eclipse.jetty.server.handler.gzip.GzipHandler;
-import org.eclipse.jetty.util.ssl.SslContextFactory;
-import org.eclipse.jetty.util.thread.QueuedThreadPool;
+import org.eclipse.jetty.util.URIUtil;
+import org.eclipse.jetty.util.resource.Resource;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.nio.channels.FileChannel;
+import java.nio.file.StandardOpenOption;
 
 public class FileServer {
 
@@ -31,24 +41,26 @@ public class FileServer {
 
         // Here configure contexts / servlets / etc.
 
-        ResourceHandler resource_handler = new ResourceHandler();
-        // Configure the ResourceHandler. Setting the resource base indicates where the files should be served out of.
-        // In this example it is the current directory but it can be configured to anything that the jvm has access to.
-        resource_handler.setDirectoriesListed(true);
-        resource_handler.setResourceBase("src/main/webapp");
-        resource_handler.setWelcomeFiles(new String[]{ "index.html" });
+//        MimeTypes mimeTypes = resource_handler.getMimeTypes();
+//        mimeTypes.addMimeMapping(, "text/html");
+//        resource_handler.setMimeTypes(mimeTypes);
+        FileHandler handler = new FileHandler("src/main/webapp");
 
         // Add the ResourceHandler to the server.
         GzipHandler gzip = new GzipHandler();
         server.setHandler(gzip);
         HandlerList handlers = new HandlerList();
-        handlers.setHandlers(new Handler[] { resource_handler, new DefaultHandler() });
+//        handlers.setHandlers(new Handler[] { resource_handler, new DefaultHandler() });
+        handlers.setHandlers(new Handler[] { handler });
         gzip.setHandler(handlers);
 
         server.start();
         server.join();
 
     }
+
+
+
 
 
 }
