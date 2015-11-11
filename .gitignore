@@ -6,3 +6,6 @@ nbproject
 webserver/.idea/
 webserver/target/
 webserver/web.iml
+
+#OSX
+.DS_Store
