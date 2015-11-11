@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="shareNice - unintrusive social sharing">
+    <meta name="author" content="Mischa Tuffield">
+    <link rel="icon" href="images/favicon.ico">
+
+    <title>shareNice</title>
+
+    <!-- Bootstrap core CSS -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="styles/bootstrap.min.css" />
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="styles/cover.css" rel="stylesheet">
+
+    <!-- Optional theme -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous"> -->
+  </head>
+
+  <body>
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <div id="shareNice" data-share-label="" data-icon-size="32" />
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li class="active"><a href="/index">home</a></li>
+                  <li><a href="/technical">technical</a></li>
+                  <li><a href="/demo">demo</a></li>
+                  <li><a href="https://github.com/mischat/shareNice">code</a></li>
+                  <li><a href="/privacy">privacy policy</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <div class="inner cover">
+            <img src="images/original_image_flipped.png" />
+            <h1 class="cover-heading">uninstrusive social sharing</h1>
+            <p class="lead">shareNice provides website owners with a social sharing widget that does NOT track their users. shareNice is a sharing library that enables your users to share your content with their friends without being tracking by another party.</p>
+          </div>
+
+          <div class="main">
+            <p>
+            sharenice is written and maintained by Mischa Tuffield. An example of the shareNice button in action can be found on the top left hand corner of this page, and on http://mmt.me.uk/, www.garlik.com, and data.southampton.ac.uk.</p>
+            </p>
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p>&copy; Copyright 2015 <a href="http://mmt.me.uk/">Mischa Tuffield</a> </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <!-- The sharenice script -->
+    <script type="text/javascript" src="http://sharenice.org/code.js"></script>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script type="text/javascript" src="js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
+
