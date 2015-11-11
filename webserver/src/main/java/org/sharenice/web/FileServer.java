@@ -1,31 +1,22 @@
 package org.sharenice.web;
 
-import org.eclipse.jetty.http.MimeTypes;
 import org.eclipse.jetty.http2.server.HTTP2CServerConnectionFactory;
 import org.eclipse.jetty.server.*;
-import org.eclipse.jetty.server.handler.AbstractHandler;
-import org.eclipse.jetty.server.handler.DefaultHandler;
 import org.eclipse.jetty.server.handler.HandlerList;
-import org.eclipse.jetty.server.handler.ResourceHandler;
 import org.eclipse.jetty.server.handler.gzip.GzipHandler;
-import org.eclipse.jetty.util.URIUtil;
-import org.eclipse.jetty.util.resource.Resource;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.nio.channels.FileChannel;
-import java.nio.file.StandardOpenOption;
+import org.eclipse.jetty.util.thread.QueuedThreadPool;
+import org.eclipse.jetty.util.thread.ScheduledExecutorScheduler;
 
 public class FileServer {
 
     public static void main(String[] args) throws Exception {
 
-        // The Jetty Server.
-        Server server = new Server();
+        QueuedThreadPool threadPool = new QueuedThreadPool(100);
 
+        // The Jetty Server.
+        Server server = new Server(threadPool);
+
+        server.addBean(new ScheduledExecutorScheduler());
         // Common HTTP configuration.
         HttpConfiguration config = new HttpConfiguration();
 
@@ -39,29 +30,23 @@ public class FileServer {
         connector.setPort(8080);
         server.addConnector(connector);
 
+//        server.setHandler(new FileHandler("src/main/webapp"));
+
         // Here configure contexts / servlets / etc.
 
-//        MimeTypes mimeTypes = resource_handler.getMimeTypes();
-//        mimeTypes.addMimeMapping(, "text/html");
-//        resource_handler.setMimeTypes(mimeTypes);
         FileHandler handler = new FileHandler("src/main/webapp");
 
-        // Add the ResourceHandler to the server.
         GzipHandler gzip = new GzipHandler();
         server.setHandler(gzip);
         HandlerList handlers = new HandlerList();
-//        handlers.setHandlers(new Handler[] { resource_handler, new DefaultHandler() });
         handlers.setHandlers(new Handler[] { handler });
         gzip.setHandler(handlers);
 
         server.start();
+        server.dumpStdErr();
         server.join();
 
     }
-
-
-
-
 
 }
 /* vi:set expandtab sts=2 sw=2: */
