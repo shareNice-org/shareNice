@@ -27,10 +27,8 @@ public class FileServer {
         HTTP2CServerConnectionFactory http2c = new HTTP2CServerConnectionFactory(config);
 
         ServerConnector connector = new ServerConnector(server, http1, http2c);
-        connector.setPort(8080);
+        connector.setPort(80);
         server.addConnector(connector);
-
-//        server.setHandler(new FileHandler("src/main/webapp"));
 
         // Here configure contexts / servlets / etc.
 
@@ -45,8 +43,7 @@ public class FileServer {
         server.start();
         server.dumpStdErr();
         server.join();
-
     }
 
 }
-/* vi:set expandtab sts=2 sw=2: */
+/* vi:set expandtab sts=4 sw=4: */
