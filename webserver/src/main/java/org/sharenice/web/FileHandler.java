@@ -53,7 +53,7 @@ public class FileHandler extends AbstractHandler {
         String extension = FilenameUtils.getExtension(target);
 
         if (Strings.isNullOrEmpty(extension)) {
-            response.setContentType("text/html");
+            response.setContentType("text/html; charset=utf-8");
         } else {
             response.setContentType(mimeTypes.getMimeByExtension("."+extension));
         }
