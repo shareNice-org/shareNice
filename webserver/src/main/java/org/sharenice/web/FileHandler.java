@@ -3,13 +3,14 @@ package org.sharenice.web;
 import com.google.common.base.Strings;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
+import com.google.common.hash.Hashing;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.filefilter.TrueFileFilter;
 import org.eclipse.jetty.http.MimeTypes;
 import org.eclipse.jetty.server.Request;
 import org.eclipse.jetty.server.handler.AbstractHandler;
-import org.eclipse.jetty.util.resource.Resource;
+import org.sharenice.web.model.WebResourceCache;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -25,7 +26,7 @@ import java.util.List;
 public class FileHandler extends AbstractHandler {
     private final MimeTypes mimeTypes = new MimeTypes();
 
-    private Cache<String, byte[]> cache = CacheBuilder.newBuilder().maximumSize(1000).build();
+    private Cache<String, WebResourceCache> cache = CacheBuilder.newBuilder().maximumSize(1000).build();
 
     public FileHandler( String resource ) throws IOException {
         File dir = new File(resource);
@@ -34,7 +35,7 @@ public class FileHandler extends AbstractHandler {
             String relative = new File(resource).toURI().relativize(file.toURI()).getPath();
             System.out.println("file: " + file.getCanonicalPath() + " resource = "+ resource + " file" + file.getPath() + " relativose " + relative);
             byte[] encoded = Files.readAllBytes(Paths.get(file.getCanonicalPath()));
-            cache.put("/"+relative, encoded);
+            cache.put("/"+relative, new WebResourceCache(encoded, Hashing.sha1().hashBytes(encoded).toString()));
         }
     }
 
@@ -43,9 +44,10 @@ public class FileHandler extends AbstractHandler {
         if (target.equals("/")) {
             target = "/index";
         }
-        byte[] fileContents = cache.getIfPresent(target);
 
-        if (fileContents == null || fileContents.length < 1) {
+        WebResourceCache webResourceCache = cache.getIfPresent(target);
+
+        if (webResourceCache == null) {
             response.sendError(HttpServletResponse.SC_NOT_FOUND);
             return;
         }
@@ -58,11 +60,12 @@ public class FileHandler extends AbstractHandler {
             response.setContentType(mimeTypes.getMimeByExtension("."+extension));
         }
 
-        response.setContentLength(fileContents.length);
+        response.setHeader("ETag","\""+ webResourceCache.getEtag()+"\"");
+        response.setHeader("Cache-Control", "public, max-age=30");
+        response.setContentLength(webResourceCache.getContent().length);
 
         baseRequest.setHandled(true);
-        response.getOutputStream().write(fileContents);
+        response.getOutputStream().write(webResourceCache.getContent());
         response.getOutputStream().flush();
-
     }
 }
