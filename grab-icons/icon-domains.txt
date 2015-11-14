@@ -3,7 +3,7 @@ bebo.com
 bit.ly
 blogger.com
 delicious.com
-digg.com [http://developers.diggstatic.com/files/badge/icons/16x16-digg-guy.png]
+digg.com
 diigo.com
 evernote.com
 facebook.com
@@ -31,7 +31,7 @@ www.tumblr.com
 evri.com
 twitter.com
 www.typepad.com
-wordpress.com [http://s.wordpress.org/about/images/wpmini-blue.png]
+wordpress.com
 www.yammer.com
 mixx.com
 newsvine.com
