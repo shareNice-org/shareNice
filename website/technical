@@ -37,8 +37,8 @@
 
             <div id="navbar" class="collapse navbar-collapse navbar-right">
                   <ul class="nav navbar-nav">
-                    <li role="presentation" class="active"><a href="/index">home</a></li>
-                    <li role="presentation"><a href="/technical">technical info</a></li>
+                    <li role="presentation"><a href="/index">home</a></li>
+                    <li role="presentation" class="active"><a href="/technical">technical info</a></li>
                     <li role="presentation"><a href="/demo">demo</a></li>
                     <li role="presentation"><a href="http://github.com/mischat/shareNice">source-code</a></li>
                     <li role="presentation"><a href="/privacy">privacy policy</a></li>
