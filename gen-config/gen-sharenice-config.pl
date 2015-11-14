@@ -47,11 +47,11 @@ while (<JSTEMPLATE>) {
 
 close(JSTEMPLATE);
 
-#Get shortended output 
+#Get shortended output
 my $google = 'http://closure-compiler.appspot.com/compile';
 my $ua = LWP::UserAgent->new;
 
-my $googleres = $ua->post($google, 
+my $googleres = $ua->post($google,
             [ 'js_code' => $output,
             'compilation_level' => 'WHITESPACE_ONLY' ,
             'output_format' => 'text' ,
