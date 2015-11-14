@@ -62,6 +62,7 @@ public class FileHandler extends AbstractHandler {
 
         response.setHeader("ETag","\""+ webResourceCache.getEtag()+"\"");
         response.setHeader("Cache-Control", "public, max-age=30");
+        response.setHeader("X-Clacks-Overhead", "GNU Terry Pratchett");
         response.setContentLength(webResourceCache.getContent().length);
 
         baseRequest.setHandled(true);
