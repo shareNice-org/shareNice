@@ -14,9 +14,7 @@ myweb2.search.yahoo.com,mail.yahoo.com.png,http://myweb2.search.yahoo.com/myresu
 mixx.com,mixx.com.png,http://www.mixx.com/submit?page_url=%SHARE_URL%
 myspace.com,myspace.com.png,http://www.myspace.com/Modules/PostTo/Pages/?u=%SHARE_URL%
 newsvine.com,newsvine.com.png,http://www.newsvine.com/_tools/seed&save?popoff=0&u=%SHARE_URL%
-orkut.com,orkut.com.png,http://promote.orkut.com/preview?nt=orkut.com&du=%SHARE_URL%
 reddit.com,reddit.com.png,http://reddit.com/submit?url=%SHARE_URL%
 stumbleupon.com,stumbleupon.com.png,http://www.stumbleupon.com/submit?url=%SHARE_URL%
 www.tumblr.com,tumblr.com.png,http://www.tumblr.com/share
 twitter.com,twitter.com.png,http://twitter.com/?status=%SHARE_URL%
-plus.google.com,plus.google.com.png,https://plus.google.com/_/+1/confirm?url=%SHARE_URL%
