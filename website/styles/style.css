@@ -1,81 +1,61 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
-        background-color: #FFFFFF;
-        position: absolute;
-	width: 95%;
-}
-h1, h2, h3, h4, p, ul, li, a {
-        font-family: helvetica, arial, sans-serif;
+  height: 100%;
+  background-color: #666;
+  color: #fff;
+  font-family: "Quattrocento Sans",sans-serif;
+   /* Margin bottom by footer height */
+  margin-bottom: 60px;
 }
 
-h1, h2, h3, h4 {
-	color: #F3921D;
+.footer {
+  position: absolute;
+  bottom: 0;
+  /* Set the fixed height of the footer here */
+  height: 60px;
 }
-li {
-	padding-left: 20px;
-}
+
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a,
 a {
-	color: #F3921D;
-	text-decoration: none; 
-}
-a:hover
-{
-        color: #959595;
-        text-decoration: underline;
-}
-li {
-	list-style: none;
-	margin-left:-40px;
-}
-img {
-	border-width : 0;
-}
-.main {
-	font-size: 90%; /* Resets 1em to 10px */
-        width:65%;
-        height:90%;
-        margin:auto;
-}
-.head {
-        width:65%;
-        height:90%;
-        margin:auto;
-}
-.depiction {
-	float : right;
-}
-.depictiontext {
-	float : left;
-}
-.logo {
-	float : left;
-	padding-top: 75px;
-}
-.foot {
-	font-size: 75%; /* Resets 1em to 10px */
-	position: relative;
-	visibility: visible;
- 	text-align: center;
+  color: #f39200;
 }
 
-.rss li {
-	padding: 2px;
-	font-size: 75%;
-
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a:hover,
+a:focus, a:hover {
+    color: #fff;
+    text-decoration: underline;
 }
 
-.clearboth {
-	clear: both;
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+    text-decoration: underline;
+    background-color: #666;
 }
 
-.rss {
-	float: left;
-	width: 190px;;
+.navbar-default {
+    background-color: inherit;
+    border: none;
 }
 
-#nav-header {
-	float: right;
+.topMargin {
+    margin-top: 8px !important;
 }
 
-#shareNice {
-	float:right;
+.page-header {
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+
+/* Customize container */
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
 }

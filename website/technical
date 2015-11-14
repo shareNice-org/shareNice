@@ -1,118 +1,159 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+<!DOCTYPE html>
+<html lang="en">
   <head>
-      <title>shareNice - Awesome URL Sharing Service</title>
-      <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="shareNice - unintrusive social sharing">
+    <meta name="author" content="Mischa Tuffield">
+    <link rel="icon" href="images/favicon.png">
 
-      <link rel="shortcut icon" href="images/icon-share-orange16.png" />
-      <meta name="keywords" content="shareNice sharing social ethical unintrusive opensource"/>
-      <meta name="description" content="shareNice is an uninstrusive opensource social sharing widget which is pro user privacy" />
-      <link rel="stylesheet" type="text/css" href="styles/style.css" />
-      <!--[if IE 6]>
-        <link type="text/css" rel="stylesheet" href="ie6.css" >
-      <![endif]-->
+    <title>shareNice</title>
+
+    <!-- Bootstrap core CSS -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+    <!-- Pretty font -->
+    <link href='https://fonts.googleapis.com/css?family=Quattrocento+Sans' rel='stylesheet' type='text/css'>
+
+    <!-- Hand rolled CSS -->
+    <link rel="stylesheet" href="styles/style.css">
   </head>
+
   <body>
-   <div class="logo">
-    <a href="/"><img alt="ShareNice" src="images/original_image.png"/></a>
-   </div>
+    <div class="container">
+        <nav class="navbar-default clearfix">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <span class="topMargin" id="shareNice" data-share-label="" data-icon-size="32" data-share-zindex="2147483647"/>
+            </div>
 
-   <div rel="foaf:maker">
-    <div typeof="foaf:Person" class="head">
-	<a style="display:none" rel="foaf:weblog" href="http://mmt.me.uk/blog/">blog</a>
-     <small>
-      <a href="https://github.com/mischat/shareNice/commits/master.atom" title="git repo commit feed"><img src="images/rss.png" alt="RSS feed"/></a> <span id="nav-header"><a href="index">home</a> | <a href="technical">technical info</a> | <a href="demo">demo</a> | <a href="http://github.com/mischat/shareNice">source-code</a> | <a href="privacy">privacy policy</a></span>
-     </small>
+            <div id="navbar" class="collapse navbar-collapse navbar-right">
+                  <ul class="nav navbar-nav">
+                    <li role="presentation" class="active"><a href="/index">home</a></li>
+                    <li role="presentation"><a href="/technical">technical info</a></li>
+                    <li role="presentation"><a href="/demo">demo</a></li>
+                    <li role="presentation"><a href="http://github.com/mischat/shareNice">source-code</a></li>
+                    <li role="presentation"><a href="/privacy">privacy policy</a></li>
+                  </ul>
+            </div>
+        </nav>
+
+        <div class="page-header">
+            <img class="img-responsive center-block" src="images/original_image_flipped.png" />
+            <h1 class="text-center">uninstrusive social sharing</h1>
+            <p class="lead">shareNice provides website owners with a social sharing widget that does NOT track their
+            users. shareNice is an open-source sharing library that enables your users to share your content with their
+            friends without being tracking by another party.</p>
+        </div>
+
+
+        <div class="containter">
+            <div class="row">
+                <div class="col-lg-12">
+                        <h2>Technical Information</h2>
+
+                        <h3>Using shareNice on your website</h3>
+
+                        <p>To add our uninstrusive social sharing feature, see the <a href="/demo">demo</a>, to your website all you need to do is include the following javascript code on your webpage:</p>
+                       <pre>
+                    &lt;script src="/code.js" type="text/javascript"&gt;&lt;/script&gt;
+                      </pre>
+
+                       <p>and add the following div element to your page source:</p>
+                       <pre>
+                    &lt;div id="shareNice"&gt;&lt;/div&gt;
+                       </pre>
+
+
+                        <h3>Configuring the shareNice lightbox</h3>
+
+                        <p>One can now reconfigure shareNice, using the following five attributes</p>
+
+                        <ul>
+                         <li><code>data-services</code>: Takes a comma separate list of domain's which you are interested in including in your shareNice lightbox.</li>
+                         <br/>
+                         <li><code>data-share-label</code>: Allows a website owner to config the text "Share" as they please.</li>
+                         <li><code>data-color-scheme</code>: You can choose one of "black", "blue", "green", "orange", "pink", "red" to customise.</li>
+                         <li><code>data-icon-size</code>: either "16" or "32", this defines the size of the shareNice icon.</li>
+                         <li><code>data-panel-bottom</code>: either "default" or "plain". Where: "plain" gives a non-branded lightbox.</li>
+                         <li><code>data-share-zindex</code>: you can provide a z-index number here, if your website CSS uses z-index, you can add an optional z-index.</li>
+                        </ul>
+
+                        <h3>Example config</h3>
+
+                       <p>If you want to config the text to say "shareNice this page" and only have icons for the following sites:  <code>facebook.com,digg.com,email,delicious.com,twitter.com</code>, use the following HTML on your page:</p>
+                       <pre>
+                    &lt;div id="shareNice" data-services="facebook.com,digg.com,email,delicious.com,twitter.com"
+                    data-share-label="shareNice this page"&gt;&lt;/div&gt;
+                       </pre>
+
+                        <p>See <a href="http://mmt.me.uk/">mmt.me.uk</a> for an example of this configuration setup in action.</p>
+
+                        <h3>Our setup on sharenice.org</h3>
+
+                        <p>We are hosting sharenice as a virtual host on <a href="http://httpd.apache.org/">an Apache Server</a>, using the following httpd.conf file</p>
+
+                        <pre>
+                    <VirtualHost *:80>
+                            DocumentRoot /var/www/vhosts/sharenice.org/httpdocs
+                            ServerName www.sharenice.org
+                            ServerAlias sharenice.org
+                            UseCanonicalName Off
+
+                            CustomLog /dev/null combined
+
+                            RewriteEngine on
+                            RewriteCond %{HTTP_HOST} ^www.sharenice.org [NC]
+                            RewriteRule ^(.*)$ http://sharenice.org/$1 [L,R=301]
+
+                    </VirtualHost>
+                    </pre>
+
+                       <p>As you can see, we are redirect ALL logs to <em>/dev/null</em> and as a result we are not collecting ANY information about users of sharenice.org.</p>
+
+                       <h3>You can host your own version of shareNice</h3>
+
+                       <p>If you would like to host your version of the shareNice tool, you can download and follow the provided instructions in <a href="http://github.com/mischat/shareNice">shareNice's repository on github</a>. shareNice is <a href="http://www.gnu.org/licenses/license-list.html#GPLCompatibleLicenses">free software</a> please see our <a href="https://github.com/mischat/shareNice/blob/master/LICENSE.txt">license</a> for more information.</p>
+
+
+                       <h3>Questions, Comments, and Feedback</h3>
+
+                        <p>If you have any questions regarding shareNice please either pop into #shareNice on irc.freenode.net, or email [shareNice at mmt me uk]. All comments and feedback are welcome. shareNice is an <a href="http://github.com/mischat/shareNice">open-source project</a> if you feel like something can be done better feel free to hack away yourself or submit a bug-report on the <a href="http://github.com/mischat/shareNice/issues/">shareNice git repository's issue tracker</a>.</p>
+
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container text-center">
+                Hand-rolled in <a href="http://www.vim.org/">vi</a> 2015
+            </div>
+        </footer>
+
     </div>
-   </div>
-   <div class="main">
-    <!-- The following div is needed if you want to use shareNice -->
-    <div id="shareNice" share-label="share"></div>
-    <div style="clear:right;"></div>
-    <!-- plus some styling -->
-
-    <h1>shareNice : unintrusive social sharing</h1>
-
-    <h2>Technical Information</h2>
-
-    <h3>Using shareNice on your website</h3>
-
-    <p>To add our uninstrusive social sharing feature, see the <a href="/demo">demo</a>, to your website all you need to do is include the following javascript code on your webpage:</p>
-   <pre>
-&lt;script src="/code.js" type="text/javascript"&gt;&lt;/script&gt;
-  </pre>
-
-   <p>and add the following div element to your page source:</p>
-   <pre>
-&lt;div id="shareNice"&gt;&lt;/div&gt;
-   </pre>
 
 
-    <h3>Configuring the shareNice lightbox</h3>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
 
-    <p>One can now reconfigure shareNice, using the following five attributes</p>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-    <ul>
-     <li><code>data-services</code>: Takes a comma separate list of domain's which you are interested in including in your shareNice lightbox.</li>
-     <br/>
-     <li><code>data-share-label</code>: Allows a website owner to config the text "Share" as they please.</li>
-     <li><code>data-color-scheme</code>: You can choose one of "black", "blue", "green", "orange", "pink", "red" to customise.</li>
-     <li><code>data-icon-size</code>: either "16" or "32", this defines the size of the shareNice icon.</li>
-     <li><code>data-panel-bottom</code>: either "default" or "plain". Where: "plain" gives a non-branded lightbox.</li>
-     <li><code>data-share-zindex</code>: you can provide a z-index number here, if your website CSS uses z-index, you can add an optional z-index, see <a href="http://jablonskis.org">an example on jablonskis.org</a></li>
-    </ul>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 
-    <h3>Example config</h3>
+    <!-- The sharenice script -->
+    <script type="text/javascript" src="http://sharenice.org/code.js"></script>
 
-   <p>If you want to config the text to say "shareNice this page" and only have icons for the following sites:  <code>facebook.com,digg.com,email,delicious.com,twitter.com</code>, use the following HTML on your page:</p>
-   <pre>
-&lt;div id="shareNice" data-services="facebook.com,digg.com,email,delicious.com,twitter.com"
-data-share-label="shareNice this page"&gt;&lt;/div&gt;
-   </pre>
-
-    <p>See <a href="http://mmt.me.uk/">mmt.me.uk</a> for an example of this configuration setup in action.</p>
-
-    <h3>Our setup on sharenice.org</h3>
-
-    <p>We are hosting sharenice as a virtual host on <a href="http://httpd.apache.org/">an Apache Server</a>, using the following httpd.conf file</p>
-
-    <pre>
-<VirtualHost *:80>
-        DocumentRoot /var/www/vhosts/sharenice.org/httpdocs
-        ServerName www.sharenice.org
-        ServerAlias sharenice.org
-        UseCanonicalName Off
-
-        CustomLog /dev/null combined
-
-        RewriteEngine on
-        RewriteCond %{HTTP_HOST} ^www.sharenice.org [NC]
-        RewriteRule ^(.*)$ http://sharenice.org/$1 [L,R=301]
-
-</VirtualHost>
-</pre>
-
-   <p>As you can see, we are redirect ALL logs to <em>/dev/null</em> and as a result we are not collecting ANY information about users of sharenice.org.</p>
-
-   <h3>You can host your own version of shareNice</h3>
-
-   <p>If you would like to host your version of the shareNice tool, you can download and follow the provided instructions in <a href="http://github.com/mischat/shareNice">shareNice's repository on github</a>. shareNice is <a href="http://www.gnu.org/licenses/license-list.html#GPLCompatibleLicenses">free software</a> please see our <a href="https://github.com/mischat/shareNice/blob/master/LICENSE.txt">license</a> for more information.</p>
-
-
-   <h3>Questions, Comments, and Feedback</h3>
-
-    <p>If you have any questions regarding shareNice please either pop into #shareNice on irc.freenode.net, or email [shareNice at mmt me uk]. All comments and feedback are welcome. shareNice is an <a href="http://github.com/mischat/shareNice">open-source project</a> if you feel like something can be done better feel free to hack away yourself or submit a bug-report on the <a href="http://github.com/mischat/shareNice/issues/">shareNice git repository's issue tracker</a>.</p>
-
-   </div> <!-- end main body -->
-
-   <div class="foot">
-    <p>
-     <small>
-    Hand-rolled in <a href="http://www.vim.org/">vi</a> 2011
-     </small>
-    </p>
-   </div>
-
-   <script src="http://sharenice.org/code.js" type="text/javascript"></script>
-   </body>
+  </body>
 </html>
+
