@@ -5,7 +5,7 @@ html {
 
 body {
   height: 100%;
-  background-color: #666;
+  background-color: #888;
   color: #fff;
   font-family: "Quattrocento Sans",sans-serif;
    /* Margin bottom by footer height */
@@ -37,7 +37,7 @@ a:focus, a:hover {
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
     text-decoration: underline;
-    background-color: #666;
+    background-color: #888;
 }
 
 .navbar-default {
