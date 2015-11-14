@@ -20,6 +20,7 @@ while(<DOMAINS>) {
         $fn =~ s/www\d?\.//g;
         system('curl', 'http://www.google.com/s2/favicons?domain='.$_, '-o', '../images/'.$fn);
     }
+    sleep(1);
 }
 
 # vi:set expandtab sts=4 sw=4:
