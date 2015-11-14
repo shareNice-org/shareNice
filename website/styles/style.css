@@ -45,6 +45,10 @@ a:focus, a:hover {
     border: none;
 }
 
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
 .topMargin {
     margin-top: 8px !important;
 }
