@@ -7,7 +7,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="shareNice - unintrusive social sharing">
     <meta name="author" content="Mischa Tuffield">
-    <link rel="icon" href="images/favicon.png">
+    <link rel="icon" href="assets/favicon.png">
 
     <title>shareNice</title>
 
@@ -47,7 +47,7 @@
         </nav>
 
         <div class="page-header">
-            <img class="img-responsive center-block" src="images/original_image_flipped.png" />
+            <img class="img-responsive center-block" src="assets/original_image_flipped.png" />
             <h1 class="text-center">uninstrusive social sharing</h1>
             <p class="lead">shareNice provides website owners with a social sharing widget that does NOT track their
             users. shareNice is an open-source sharing library that enables your users to share your content with their
