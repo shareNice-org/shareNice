@@ -41,6 +41,13 @@ public class FileHandler extends AbstractHandler {
 
     @Override
     public void handle( String target, Request baseRequest, HttpServletRequest request, HttpServletResponse response ) throws IOException, ServletException {
+
+        if (((Request) request).getHttpURI().getHost().startsWith("www.")) {
+            response.setStatus(HttpServletResponse.SC_MOVED_PERMANENTLY);
+            response.setHeader("Location", ((Request) request).getRootURL().toString().replace("www.","")+target);
+            return;
+        }
+
         if (target.equals("/")) {
             target = "/index";
         }
