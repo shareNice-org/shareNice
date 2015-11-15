@@ -43,6 +43,7 @@ public class FileHandler extends AbstractHandler {
     public void handle( String target, Request baseRequest, HttpServletRequest request, HttpServletResponse response ) throws IOException, ServletException {
 
         if (((Request) request).getHttpURI().getHost().startsWith("www.")) {
+            baseRequest.setHandled(true);
             response.setStatus(HttpServletResponse.SC_MOVED_PERMANENTLY);
             response.setHeader("Location", ((Request) request).getRootURL().toString().replace("www.","")+target);
             return;
@@ -55,6 +56,7 @@ public class FileHandler extends AbstractHandler {
         WebResourceCache webResourceCache = cache.getIfPresent(target);
 
         if (webResourceCache == null) {
+            baseRequest.setHandled(true);
             response.sendError(HttpServletResponse.SC_NOT_FOUND);
             return;
         }
