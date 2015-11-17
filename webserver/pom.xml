@@ -11,7 +11,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <jetty.version>9.3.5.v20151012</jetty.version>
+        <jetty.version>9.3.6.v20151106</jetty.version>
         <io.version>2.4</io.version>
         <guava.version>18.0</guava.version>
     </properties>
