@@ -1,54 +1,66 @@
 package org.sharenice.web;
 
 import org.eclipse.jetty.alpn.ALPN;
+import org.eclipse.jetty.alpn.server.ALPNServerConnectionFactory;
 import org.eclipse.jetty.http2.HTTP2Cipher;
-import org.eclipse.jetty.http2.server.HTTP2CServerConnectionFactory;
 import org.eclipse.jetty.http2.server.HTTP2ServerConnectionFactory;
 import org.eclipse.jetty.server.*;
-import org.eclipse.jetty.alpn.server.ALPNServerConnectionFactory;
-import org.eclipse.jetty.server.handler.HandlerList;
-import org.eclipse.jetty.server.handler.gzip.GzipHandler;
 import org.eclipse.jetty.util.ssl.SslContextFactory;
 import org.eclipse.jetty.util.thread.QueuedThreadPool;
-import org.eclipse.jetty.util.thread.ScheduledExecutorScheduler;
 
 public class FileServer {
 
+    private final static int HTTP_PORT = 8080;
+    private final static int HTTPS_PORT = 8443;
+
     public static void main(String[] args) throws Exception {
+        QueuedThreadPool threadPool = new QueuedThreadPool(100);
 
-        Server server = new Server();
+        // The Jetty Server.
+        Server server = new Server(threadPool);
 
-
+        // Custome FileHandler
+        FileHandler handler = new FileHandler("src/main/website");
+        server.setHandler(handler);
 
         // HTTP Configuration
         HttpConfiguration http_config = new HttpConfiguration();
         http_config.setSecureScheme("https");
-        http_config.setSecurePort(8443);
+        http_config.setSecurePort(HTTPS_PORT);
         http_config.setSendXPoweredBy(true);
         http_config.setSendServerVersion(true);
 
+        // HTTPS Configuration
+        HttpConfiguration https_config = new HttpConfiguration(http_config);
+        https_config.addCustomizer(new SecureRequestCustomizer(true));
+
         // HTTP Connector
-        ServerConnector http = new ServerConnector(server,new HttpConnectionFactory(http_config), new HTTP2CServerConnectionFactory(http_config));
-        http.setPort(8080);
+        ServerConnector http = new ServerConnector(server,new HttpConnectionFactory(http_config));
+        http.setPort(HTTP_PORT);
         server.addConnector(http);
 
         // SSL Context Factory for HTTPS and HTTP/2
-//        String jetty_distro = System.getProperty("jetty.distro","../../jetty-distribution/target/distribution");
-        SslContextFactory sslContextFactory = new SslContextFactory(true);
+        SslContextFactory sslContextFactory = new SslContextFactory();
         sslContextFactory.setKeyStorePath("/tmp/keystore/keystore.jks");
-        sslContextFactory.setKeyStorePassword("localhost");
-        sslContextFactory.setKeyManagerPassword("localhost");
+        sslContextFactory.setKeyStorePassword("storepwd");
+        sslContextFactory.setTrustStorePath("/tmp/keystore/truststore.jks");
+        sslContextFactory.setTrustStorePassword("storepwd");
         sslContextFactory.setCipherComparator(HTTP2Cipher.COMPARATOR);
-
-        // HTTPS Configuration
-        HttpConfiguration https_config = new HttpConfiguration(http_config);
-        https_config.addCustomizer(new SecureRequestCustomizer());
+        sslContextFactory.setUseCipherSuitesOrder(true);
+        sslContextFactory.setExcludeCipherSuites(
+                "SSL_RSA_WITH_DES_CBC_SHA",
+                "SSL_DHE_RSA_WITH_DES_CBC_SHA",
+                "SSL_DHE_DSS_WITH_DES_CBC_SHA",
+                "SSL_RSA_EXPORT_WITH_RC4_40_MD5",
+                "SSL_RSA_EXPORT_WITH_DES40_CBC_SHA",
+                "SSL_DHE_RSA_EXPORT_WITH_DES40_CBC_SHA",
+                "SSL_DHE_DSS_EXPORT_WITH_DES40_CBC_SHA");
 
         // HTTP/2 Connection Factory
         HTTP2ServerConnectionFactory h2 = new HTTP2ServerConnectionFactory(https_config);
 
         NegotiatingServerConnectionFactory.checkProtocolNegotiationAvailable();
-        ALPNServerConnectionFactory alpn = new ALPNServerConnectionFactory();
+        ALPNServerConnectionFactory alpn = new ALPNServerConnectionFactory("h2","h2-17","h2-16","h2-15","h2-14","http/1.1");
         alpn.setDefaultProtocol(http.getDefaultProtocol());
 
         // SSL Connection Factory
@@ -57,59 +69,16 @@ public class FileServer {
         // HTTP/2 Connector
         ServerConnector http2Connector =
                 new ServerConnector(server,ssl,alpn,h2,new HttpConnectionFactory(https_config));
-        http2Connector.setPort(8443);
+        http2Connector.setPort(HTTPS_PORT);
         server.addConnector(http2Connector);
-
-        FileHandler handler = new FileHandler("src/main/webapp");
-
-    //    GzipHandler gzip = new GzipHandler();
-      //  server.setHandler(gzip);
-        HandlerList handlers = new HandlerList();
-        handlers.setHandlers(new Handler[] { handler });
-        server.setHandler(handlers);
 
         ALPN.debug=true;
 
         server.start();
+        server.setDumpAfterStart(true);
         server.dumpStdErr();
         server.join();
 
-
-
-/**
-        QueuedThreadPool threadPool = new QueuedThreadPool(100);
-
-        // The Jetty Server.
-        Server server = new Server(threadPool);
-
-        server.addBean(new ScheduledExecutorScheduler());
-        // Common HTTP configuration.
-        HttpConfiguration config = new HttpConfiguration();
-
-        // HTTP/1.1 support.
-        HttpConnectionFactory http1 = new HttpConnectionFactory(config);
-
-        // HTTP/2 cleartext support.
-        HTTP2CServerConnectionFactory http2c = new HTTP2CServerConnectionFactory(config);
-
-        ServerConnector connector = new ServerConnector(server, http1, http2c);
-        connector.setPort(8080);
-        server.addConnector(connector);
-
-        // Here configure contexts / servlets / etc.
-
-        FileHandler handler = new FileHandler("src/main/webapp");
-
-        GzipHandler gzip = new GzipHandler();
-        server.setHandler(gzip);
-        HandlerList handlers = new HandlerList();
-        handlers.setHandlers(new Handler[] { handler });
-        gzip.setHandler(handlers);
-
-        server.start();
-        server.dumpStdErr();
-        server.join();
-*/
     }
 
 }
