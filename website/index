@@ -67,7 +67,7 @@
                      be found on the top left hand corner of this page.</p>
 
                     <p>There are two ways you can make use of shareNice, you can choose to use the version
-                    <a href="http://sharenice.org/code.js">we host</a>, or you can host your own version of the tool by
+                    <a href="//sharenice.org/code.js">we host</a>, or you can host your own version of the tool by
                     following the instructions on <a href="http://github.com/mischat/shareNice">github</a>.</p>
 
                     <p>In order to provide the most uninstrusive and ethical webpage sharing tool we could, we have taken
@@ -100,7 +100,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 
     <!-- The sharenice script -->
-    <script type="text/javascript" src="http://sharenice.org/code.js"></script>
+    <script type="text/javascript" src="//sharenice.org/code.js"></script>
 
   </body>
 </html>
