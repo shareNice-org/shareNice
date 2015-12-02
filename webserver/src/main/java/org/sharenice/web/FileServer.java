@@ -10,8 +10,8 @@ import org.eclipse.jetty.util.thread.QueuedThreadPool;
 
 public class FileServer {
 
-    private final static int HTTP_PORT = 8080;
-    private final static int HTTPS_PORT = 8443;
+    private final static int HTTP_PORT = 80;
+    private final static int HTTPS_PORT = 443;
 
     public static void main(String[] args) throws Exception {
         QueuedThreadPool threadPool = new QueuedThreadPool(100);
